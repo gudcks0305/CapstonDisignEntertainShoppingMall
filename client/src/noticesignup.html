@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> 공지사항 등록 </title>
+        <style>
+            body {
+                display : flex;
+                align-items : center;
+            }
+
+            #container {
+                width : 60%;
+                margin : 0 auto;
+            }
+
+            fieldset {
+                display : flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            fieldset li {
+                list-style: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "container">
+            <header>
+                <h1 style = "text-align: center;"> 공지사항 등록 </h1>
+            </header>
+            <form style = "text-align: center;" box-sizing : border-box;> </form>
+            <fieldset>
+                <ul>
+                    <li>
+                        <label for = "title"> 글 제목 </label> <br>
+                        <input type = "text" id = "title" autofocus placeholder="글 제목을 입력하세요" required>
+                    </li>
+                    <li>
+                        <label for = "info"> 글 내용 </label> <br>
+                        <textarea id = "info" cols = "100" rows = "30" autofocus placeholder="글 내용을 입력하세요"></textarea>
+                    </li>
+                </ul>
+
+                <div id ="buttons">
+                    <input type = "submit" value = "등록">
+                    <input type = "reset" value = "취소">
+                </div>
+            </fieldset>
+
+                <footer>
+                    <h1> 푸터 </h1>
+                </footer>
+        </div>
+    </body>
+</html>

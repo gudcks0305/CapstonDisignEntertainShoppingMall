@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>상품 등록</title>
+        <style>
+            body {
+                display : flex;
+                align-items: center;
+            }
+            #container {
+                width : 60%;
+                margin : 0 auto;
+            }
+            fieldset {
+                display : flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            fieldset li {
+                list-style : none;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id = "container">
+            <header>
+                <h1 style = "text-align : center;"> 상품등록 </h1>
+            </header>
+            <form style = "text-align: center;" box-sizing : border-box;>  </form>
+            <fieldset>
+                <ul>
+                    <li>
+                        <label for = "goods-name"> 상품명 </label> <br>
+                        <input type = "text" id = "goods-name" autofocus placeholder = "상품명을 입력하세요" required>
+                    </li>
+                    <li>
+                        <label for = "price"> 가격 </label> <br>
+                        <input type = "text" id = "price" autofocus placeholder = "가격을 입력하세요" required>
+                    </li>
+                    <li>
+                        <label for = "picture"> 상품 사진 </label> <br>
+                        <input type = "file" id = "picture">
+                    </li>
+                    <li>
+                        <label for = "period"> 등록 날짜 </label> <br>
+                        <input type = "date" id = "period" autofocus placeholder="등록 날짜를 입력하세요" required>
+                    </li>
+                    <li>
+                        <label for = "goods-info"> 상품 설명</label> <br>
+                        <textarea id = "goods-info" cols = "100" rows = "30" autofocus placeholder = "상품 설명을 입력하세요"></textarea>
+                    </li>
+                </ul>
+
+                <div id = "buttons">
+                    <input type = "submit" value = "등록">
+                    <input type = "reset" value = "취소">
+                </div>
+
+            </fieldset>
+
+                <footer>
+                    <h1> 푸터 </h1>
+                </footer>
+        </div>
+    </body>
+    
+</html>
