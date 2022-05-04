@@ -3,6 +3,7 @@ package DTO;
 import java.io.Serializable;
 
 public class Product implements Serializable{
+    
     public Product(String productId, String pname, Integer unitPrice) {
         super();
         this.productId = productId;
