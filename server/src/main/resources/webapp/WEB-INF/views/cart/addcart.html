@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>장바구니</title>
+       <script>
+        $(document).ready(function(){
+            // 목록 페이지로 이동
+            $("#btnList").click(function(){
+             location.href="${path}////";
+                                                                   });
+                                    });
+    </script>
+</head>
+<body>
+    <h2>장바구니</h2>
+    <c:choose>
+        <c:when test="${map.count == 0}">
+            장바구니가 비었습니다.
+        </c:when>
+        <c:otherwise>
+            <form name="form1" id="form1" method="post" action="${path}///">
+                <table border="1">
+                    <tr>
+                        <th>상품명</th>
+                        <th>금액</th>
+                        <th>수량</th>
+                        <th>총 금액</th>
+                        <th>취소</th>
+                    </tr>
+                    <c:forEach var="row" items="${map.list" varstatus="i">
+                        <tr>
+                        <td>
+
+                        </td>
+                        <td style="width: 80px" align="right">
+                        </td>
+                        <td>
+                            <input type="number" style="width: 40px" name="amount" value="${row.amount}" min="1">
+                            <input type="hidden" name="productId" value="${row.productId}">
+                        </td>
+                            <td style="width: 100px" align="right">
+                            </td>
+                        <td>
+                            <a href="${path}///delete.do?cartId=${row.cartId">삭제</a>
+                        </td>
+                        </tr>
+                    </c:forEach>
+                    <tr>
+                    <td colspan="5" align="right">
+                    장바구니 총 금액 <br>
+                    배송료 : <br>
+                    전체 주문 금액 :
+                    </td>
+                    </tr>
+                </table>
+                <input type="hidden" name="count" value="${map.count}">
+                <button type="submit" id="btnUpdate">수정</button>
+            </form>
+        </c:otherwise>
+    </c:choose>
+    <button type="submit" id="btnUpdate">상품목록</button>
+</body>
+</html>
