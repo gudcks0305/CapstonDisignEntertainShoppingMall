@@ -1,6 +1,6 @@
 package com.example.server.config.auth;
 
-import Dare.Blog.domain.User;
+
 import com.example.server.entity.User;
 import lombok.Data;
 import lombok.Getter;
