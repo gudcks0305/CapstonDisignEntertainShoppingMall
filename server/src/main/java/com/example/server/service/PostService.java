@@ -15,6 +15,7 @@ public class PostService {
 
     @Transactional
     public int save(Post post, User user) {
+
         post.setUser(user);
         postRepository.save(post);
         return 1;
