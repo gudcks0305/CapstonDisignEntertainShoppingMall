@@ -64,6 +64,17 @@
         text-indent: 0px;
         text-shadow: none;
         align-items: flex-start;
+    }
+
+    .c1 {
+        margin: 0px 8px 16px;
+            margin-top: 0px;
+            margin-right: 8px;
+            margin-bottom: 16px;
+            margin-left: 8px;
+        width: 248px;
+        display: inline-block;
+    }
 
     .c2 {
         display: inline-block;
@@ -72,17 +83,72 @@
         width: 100%;
         height: 256px;
         border-radius: 8px;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        border-bottom-right-radius: 8px;
-        border-bottom-left-radius: 8px;
+             border-top-left-radius: 8px;
+             border-top-right-radius: 8px;
+             border-bottom-right-radius: 8px;
+             border-bottom-left-radius: 8px;
         overflow: hidden;
-        overflow-x: hidden;
-        overflow-y: hidden;
+             overflow-x: hidden;
+             overflow-y: hidden;
         position: relative;
         vertical-align: top;
         box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px;
+    }
+
+    .c3 {
+        width: 100%;
+        height: 186px;
+        overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+    }
+
+    .c4 {
+        width: 100%;
+        height: 186px;
+        background-color: rgb(245, 247, 250);
+        background-repeat: no-repeat;
+            background-repeat-x: no-repeat;
+            background-repeat-y: no-repeat;
+        background-size: cover;
+        background-position: center bottom;
+            background-position-x: center;
+            background-position-y: bottom;
+        border-radius: 0px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+    }
+
+    .c5 {
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        justify-content: center;
+        padding: 0px 18px;
+            padding-top: 0px;
+            padding-right: 18px;
+            padding-bottom: 0px;
+            padding-left: 18px;
+    }
+
+    .c6 {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: left;
+        color: rgb(32, 36, 41);
+        overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         }
+
+    div{
+        display: block;
+    }
 </style>
 
 <div class="c1">
