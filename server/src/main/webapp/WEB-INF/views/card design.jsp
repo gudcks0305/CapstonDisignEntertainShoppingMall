@@ -64,6 +64,25 @@
         text-indent: 0px;
         text-shadow: none;
         align-items: flex-start;
+
+    .c2 {
+        display: inline-block;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        height: 256px;
+        border-radius: 8px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        position: relative;
+        vertical-align: top;
+        box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px;
+        }
 </style>
 
 <div class="c1">
