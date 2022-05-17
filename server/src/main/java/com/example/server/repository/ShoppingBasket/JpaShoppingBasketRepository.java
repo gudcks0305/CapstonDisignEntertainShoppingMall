@@ -4,5 +4,6 @@ import com.example.server.entity.ShoppingBasket;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface JpaShoppingBasketRepository extends JpaRepository<ShoppingBasket, Long> {
+    void deleteByUser_NameAndBasketId(String userId, Long basketId);
 
 }

@@ -5,6 +5,8 @@ import com.example.server.repository.ShoppingBasket.JpaShoppingBasketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class BasketService {
     @Autowired
@@ -16,4 +18,10 @@ public class BasketService {
         //basketRepository.save(userId, productId);
         return 1;
     }
+    @Transactional
+    public int deleteFromBasket(RequestBasketDto basketDto, String userId) {
+        basketRepository.deleteByUser_NameAndBasketId(userId, basketDto.getBasketId());
+        return 1;
+    }
+
 }

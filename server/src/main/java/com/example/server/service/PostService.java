@@ -4,6 +4,8 @@ import com.example.server.entity.Post;
 import com.example.server.entity.User;
 import com.example.server.repository.Post.JpaPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -27,10 +29,20 @@ public class PostService {
         return 1;
     }
     @Transactional
-    public int update(Post reqPost , Long id) {
-        Post post = postRepository.findByPostId(id , Post.class);
-        post.setTitle(reqPost.getTitle());
-        post.setContent(reqPost.getContent());
+    public int update(Post reqPost , String userId) {
+        if(reqPost.getUser().getUsername().equals(userId)){
+            Post post = postRepository.findById(reqPost.getPostId()).get();
+            post.setTitle(reqPost.getTitle());
+            post.setContent(reqPost.getContent());
+        }
         return 1;
+    }
+
+    public Page<Post> findAll(Pageable pageable) {
+        return postRepository.findAll(pageable);
+    }
+
+    public Post findByPostId(Long postId) {
+        return postRepository.findById(postId).get();
     }
 }
