@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface JpaPostRepository extends JpaRepository<Post, Long>  {
     <T> T findByPostId(Long postId , Class<T> type);
-    <T> Page<T> findAll(Class<T> type , Pageable pageable);
+    <T> Page<T> findAllBy(Class<T> type , Pageable pageable);
 }

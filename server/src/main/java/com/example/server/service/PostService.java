@@ -39,7 +39,7 @@ public class PostService {
     }
 
     public Page<Post> findAll(Pageable pageable) {
-        return postRepository.findAll(pageable);
+        return postRepository.findAllBy(Post.class,pageable);
     }
 
     public Post findByPostId(Long postId) {
