@@ -10,17 +10,17 @@
             margin-left: 6px;
 }
     a:link{
-        color : rgb(135, 142, 150);}
+        color : rgb(32, 36, 41);}
     a:visited {
-        color : rgb(135, 142, 150);}
+        color : rgb(32, 36, 41);}
     a:hover {
-        color : rgb(135, 142, 150);}
+        color : rgb(32, 36, 41);}
     a:active {
-        color : rgb(135, 142, 150);
+        color : rgb(32, 36, 41);
 }
 
     .f1 {
-        color: rgb(135, 142, 150);
+        color: rgb(32, 36, 41);
         margin-bottom: 20px;
         font-size: 15px;
         text-align: center;
@@ -29,7 +29,7 @@
     }
 
     .f2 {
-        color: rgb(135, 142, 150);
+        color: rgb(32, 36, 41);
         margin-bottom: 0px;
         font-size: 15px;
         text-align: center;

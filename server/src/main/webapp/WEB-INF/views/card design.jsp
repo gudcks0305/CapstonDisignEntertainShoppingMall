@@ -143,21 +143,58 @@
             overflow-x: hidden;
             overflow-y: hidden;
         text-overflow: ellipsis;
+        text-align: center;
         white-space: nowrap;
         }
+
+    .a1 {
+        margin: 0px auto;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        width: 1600px;
+        padding: 0px 48px;
+        padding-top: 0px;
+        padding-right: 48px;
+        padding-bottom: 0px;
+        padding-left: 48px;
+    }
+
+    .a2 {
+        margin-top: 40px;
+    }
+
+    .a3 {
+        position: relative;
+        width: calc(100% + 16px);
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
 
     div{
         display: block;
     }
 </style>
 
-<div class="c1">
-    <button class="c2">
-        <div class="c3">
-            <div class="c4" style="background-image: url();"></div>
+<div class="a1">
+    <section class="a2">
+        <div class="a3">
+            <div class="c1">
+                <button class="c2">
+                    <div class="c3">
+                        <div class="c4" style="background-image: url();">
+                        </div>
+                    </div>
+                    <div class="c5">
+                        <div class="c6">ARTIST NAME
+                        </div>
+                    </div>
+                </button>
             </div>
-        <div class="c5">
-            <div class="c6">ARTIST NAME</div>
-           </div>
-          </button>
-         </div>
+        </div>
+    </section>
+</div>
