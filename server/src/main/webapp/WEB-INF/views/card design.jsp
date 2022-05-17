@@ -155,7 +155,7 @@
         margin-left: auto;
         display: flex;
         flex-direction: column;
-        width: 1600px;
+        width: 1136px;
         padding: 0px 48px;
         padding-top: 0px;
         padding-right: 48px;
