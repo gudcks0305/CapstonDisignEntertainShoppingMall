@@ -10,5 +10,13 @@ uploads
 npm-debug.log*
 yarn-debug.kog*
 yarn-error.log*
+server/src/main/resources/application.properties
+server/src/main/resources/application-dev.properties
+server/src/main/resources/application-prod.properties
+server/src/main/resources/application-test.properties
+server/src/main/resources/application-*.properties
+server/src/main/resources/application-*.yml
+server/src/main/resources/application-*.yaml
+server/src/main/resources/application-*.json
 
 .vscode
