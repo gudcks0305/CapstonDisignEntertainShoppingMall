@@ -1,9 +1,5 @@
-<!doctype html>
-<html lang="ko">
-    <head>
-        <meta charset = 'utf-8'>
-        <title>상품 목록</title>
-    </head>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <style>
         .product-list {
             padding-top: 70px;
@@ -144,4 +140,3 @@
         </div>
     </section>
     </body>
-</html>
