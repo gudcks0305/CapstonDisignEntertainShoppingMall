@@ -1,7 +1,6 @@
 package com.example.server.controller;
 
 import com.example.server.service.PostService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
