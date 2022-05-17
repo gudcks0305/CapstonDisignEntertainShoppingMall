@@ -46,7 +46,7 @@
                             </select>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>카테고리</td>
                         <td>
