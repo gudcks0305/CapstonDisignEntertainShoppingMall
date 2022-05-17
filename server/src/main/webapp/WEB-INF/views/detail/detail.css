@@ -18,6 +18,6 @@ body { padding: 50px;}
 .product_view table select { width:100%; border:1px solid #c6c6c6; box-sizing: border-box;  background: url("../images/") no-repeat right 11px center;appearance:none; -webkit-appearance:none; -moz-appearance:none;}
 .product_view table select::-ms-expand { display: none;}
 .product_view .btns { padding: 45px 0 0; text-align: center;}
-.product_view .btns > a { display: inline-block; width: 136px; height: 42px;border-radius: 2px; font-size: 16px; color:gold; border:3px solid gold; line-height: 42px; }
+.product_view .btns > a { display: inline-block; width: 136px; height: 42px;border-radius: 2px; font-size: 16px; color:gray; border:3px solid gray; line-height: 42px; }
 .product_view .btns > a.btn1 { background: transparent;}
 .product_view .btns > a.btn2 { background: transparent;}
