@@ -22,9 +22,9 @@ public class PostController {
         return "post/postList";
     }
     // 공지사항 글쓰기 페이지
-    @GetMapping("/post/create")
+    @GetMapping("/post/write")
     public String create() {
-        return "post/create";
+        return "post/postWrite";
     }
     // 공지사항 업데이트 페이지
     @GetMapping("/post/{postId}/update")

@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="ko">
+<%@ include file="../Layout/header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <head>
         <meta charset = 'utf-8'>
         <title>공지사항 등록</title>
@@ -66,6 +66,5 @@
             </td>
         </tr>
     </table>
-    </form>
     </body>
-</html>
+<%@ include file="../Layout/footer.jsp"%>
