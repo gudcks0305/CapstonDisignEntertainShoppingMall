@@ -19,27 +19,27 @@ public class ItemController {
     //상품 추가 페이지
     @GetMapping("/item/add")
     public String add() {
-        return "item/add";
+        return "product/productAdd";
     }
     // 상품 목록 페이지
     @GetMapping("/item/list")
     public String list(Model model,
                        @PageableDefault(size = 10,sort = "itemId",direction = Sort.Direction.DESC) Pageable pageable) {
         model.addAttribute("items", itemService.findAll(pageable));
-        return "item/itemList";
+        return "product/productList";
     }
 
     // 상품 상세보기 페이지
     @GetMapping("/item/{id}")
     public String itemInfo(@PathVariable Long id, Model model) {
         model.addAttribute("item", itemService.findById(id));
-        return "item/itemDetail";
+        return "product/productDetail";
     }
     // 상품 수정 페이지
     @GetMapping("/item/{id}/update")
     public String edit(@PathVariable Long id, Model model) {
         model.addAttribute("item", itemService.findById(id));
-        return "item/productUpdate";
+        return "product/productUpdate";
     }
 
 

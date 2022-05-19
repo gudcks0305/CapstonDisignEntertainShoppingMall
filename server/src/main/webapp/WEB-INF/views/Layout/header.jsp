@@ -44,13 +44,6 @@
         <c:otherwise>
           <li class="nav-item">
             <a class="nav-link" href="/board/saveForm">글쓰기</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/defective/predict">불량 진단</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/defective/defectiveTable">제품 데이터</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="/user/updateForm">회원정보</a>
           </li>
