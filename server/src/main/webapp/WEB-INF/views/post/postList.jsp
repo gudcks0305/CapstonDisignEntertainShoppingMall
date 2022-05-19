@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../Layout/header.jsp"%>
 
-<html>
+
 <body class="vsc-initialized">
     <div id="wrap">
         <div class="sub-outside-wrap">
@@ -22,5 +22,13 @@
                                 <table class="bbs-list">
                                     <caption>FSFE의 새로운 소식을 알려드립니다.</caption>
 
-
-</html>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+<%@ include file="../Layout/footer.jsp"%>
