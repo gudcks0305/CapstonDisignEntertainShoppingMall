@@ -38,7 +38,7 @@
         li a:hover {
             background-color: #282828;
         }
-        .lnb ul li:hover div {
+        .lnb ul li:hover div{
             display: block;     /*서브메뉴 보임*/
         }
         ul li div a {
@@ -80,60 +80,8 @@
         header .lnb ul { width: 1000px; margin: 0 auto; }
         header .lnb li { margin: 5px; line-height: 25px; }
         header .lnb a { color: #282828; font-size: 1.1em; padding 10px 30px; }
-
-
-         *{margin:0; padding: 0;}
-    li{list-style:none;}
-
-    #content .slide-wrap{position:relative; height: 1080px;}
-    #content .slide-wrap input[type='radio']{display: none;}
-    #content .slide-wrap label{
-      width: 20px; height: 20px; background: #eee;
-      border-radius: 20px; display: inline-block; position: relative; top: 460px; left: calc(50% - 30px); z-index: 9999; cursor: pointer;
-    }
-
-    #slide-wrap .content .slide-img1 {
-      background-image: url('http://wooreeweb.com/img/bg-1.jpg');
-    }
-    #slide-wrap .content .slide-img2 {
-      background-image: url('http://wooreeweb.com/img/bg-2.jpg');
-    }
-    #slide-wrap .content .slide-img3 {
-      background-image: url('http://wooreeweb.com/img/bg-3.jpg');
-    }
-    #slide-wrap .content .slide-img4 {
-      background-image: url('http://wooreeweb.com/img/bg-4.jpg');
-    }
-
-    #content .slide-wrap ul li{position: absolute; top:0; left: 0; background-repeat: no-repeat; background-size: cover; background-position: center;}
-
-    #slide-wrap ul li{width: 1000px; height: 400px; margin: 0 auto;}
-
-    .content li {display: none; }
-        #circle1:checked ~ .content .slide-img1,
-        #circle2:checked ~ .content .slide-img2,
-        #circle3:checked ~ .content .slide-img3,
-        #circle4:checked ~ .content .slide-img4{
-        display: block;
-        }
-        /* input:checked + label{ width: 100px;} ?? */
-        @keyframes slideInFromLeft{
-        0%{ position: absolute; left: -100%; top: 0;}
-        100%{ position: absolute; left: 0; top: 0;}
-        }
-        @keyframes slideOutToRight{
-            0%{ right: -100%; top: 0;}
-            100%{ right: 0; top: 0;}
-        }
-        .slide-img1,
-        .slide-img2,
-        .slide-img3,
-        .slide-img4{ animation: slideInFromLeft 1s forwards; }
-
-
-
         #content { width: 1000px; margin: 0 auto; }
-        #content .section1 .slide-wrap{
+        #content .section1 {
             overflow: hidden;
             width: 1000px; height: 400px; margin: 0 auto;
             border: 1px solid #cccccc;
@@ -143,8 +91,7 @@
             border: 1px solid #cccccc;
             box-sizing: border-box;
         }
-        #content .slide_banner {width: 700px;}
-        #content .side_banner {width: 300px;}
+        #content .slide_banner {width: 1000px;}
         #content .section2 div {
             margin-top: 10px;
             width: 1000px; height: 400px; line-height: 400px; text-align: center;
@@ -157,13 +104,20 @@
             width: 240px; border: 1px solid #cccccc; box-sizing: border-box;
         }
          #content .hit_product ul li:first-child {margin-left: 7px;}
+         #content .md_product {overflow: hidden;}
+         #content .md_product ul li {
+            list-style: none; float: left; margin: 0 7px 0 0;
+            width: 240px; border: 1px solid #cccccc; box-sizing: border-box;
+         }
+         #content .md_product ul li:first-child {margin-left: 7px;}
+
     </style>
 </head>
 <body>
 <header>
     <div class="gnb">
         <ul>
-            <li><a href="loginForm.html" alt="">Login</a> </li>
+            <li><a href="#" alt="">Login</a> </li>
             <li><a href="#" alt="">review</a> </li>
             <li><a href="#" alt="">community</a> </li>
             <li><a href="#" alt="">-</a> </li>
@@ -186,7 +140,7 @@
             <li>
                 <a href="#" alt="">ARTIST</a>
                 <div class="sub">
-                    <a href="mainpage.html">SM</a>
+                    <a href="#">SM</a>
                     <a href="#">YG</a>
                     <a href="#">JYP</a>
                 </div>
@@ -206,24 +160,7 @@
 </header>
 <div id="content">
     <div class="section1">
-        <div id="slide-wrap">
-            <input type="radio" name="dot" id="circle1" checked>
-            <label for="circle1"></label>
-            <input type="radio" name="dot" id="circle2">
-            <label for="circle2"></label>
-            <input type="radio" name="dot" id="circle3">
-            <label for="circle3"></label>
-            <input type="radio" name="dot" id="circle4">
-            <label for="circle4"></label>
-            <ul class="content">
-                <li class="slide-img1 "></li>
-                <li class="slide-img2 "></li>
-                <li class="slide-img3"></li>
-                <li class="slide-img4 "></li>
-            </ul>
-        </div>
-
-
+        <div class="slide_banner">slide banner</div>
     </div>
     <div class="section2">
         <div class="hit_product">
@@ -232,6 +169,14 @@
                 <li><a href="#" alt="">hit_product2</a> </li>
                 <li><a href="#" alt="">hit_product3</a> </li>
                 <li><a href="#" alt="">hit_product4</a> </li>
+            </ul>
+        </div>
+        <div class="md_product">
+            <ul>
+                <li><a href="#" alt="">md_product1</a> </li>
+                <li><a href="#" alt="">md_product2</a> </li>
+                <li><a href="#" alt="">md_product3</a> </li>
+                <li><a href="#" alt="">md_product4</a> </li>
             </ul>
         </div>
     </div>
