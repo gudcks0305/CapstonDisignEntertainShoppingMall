@@ -1,0 +1,117 @@
+input#che{
+    display:none;
+}
+input#che + label{
+    cursor:pointer;
+}
+
+input#che + label:before{
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    line-height:17px;
+    background-color:transparent;
+    border:3px solid #3c3e70;
+    vertical-align:middle;
+}
+
+input#che:checked + label:before{
+    content:"\f00c";
+    font-family:"Font Awesome 5 free";
+    font-weight:900;
+    color:gold;
+    background-color:transparent;
+    border-color:gold;
+    font-size:13px;
+    text-align:center;
+}
+
+input#che2{
+    display:none;
+}
+input#che2 + label{
+    cursor:pointer;
+}
+
+input#che2 + label:before{
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    line-height:17px;
+    background-color:transparent;
+    border:3px solid darkgray;
+    vertical-align:middle;
+}
+
+input#che2:checked + label:before{
+    content:"\f00c";
+    font-family:"Font Awesome 5 free";
+    font-weight:900;
+    color:black;
+    background-color:transparent;
+    border-color:black;
+    font-size:13px;
+    text-align:center;
+}
+
+input#che3{
+    display:none;
+}
+input#che3 + label{
+    cursor:pointer;
+}
+
+input#che3 + label:before{
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    line-height:17px;
+    background-color:transparent;
+    border:3px solid whitesmoke;
+    vertical-align:middle;
+}
+
+input#che3:checked + label:before{
+    content:"\f00c";
+    font-family:"Font Awesome 5 free";
+    font-weight:900;
+    color:lightcoral;
+    background-color:transparent;
+    border-color:lightcoral;
+    font-size:13px;
+    text-align:center;
+}
+
+input#che4{
+    display:none;
+}
+input#che4+ label{
+    cursor:pointer;
+}
+
+input#che4+ label:before{
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    line-height:17px;
+    background-color:transparent;
+    border:3px solid gray;
+    vertical-align:middle;
+    border-radius: 5px;
+}
+
+input#che4:checked + label:before{
+    content:"\f00c";
+    font-family:"Font Awesome 5 free";
+    font-weight:900;
+    color:white;
+    background-color:gray;
+    border-color:gray;
+    font-size:13px;
+    text-align:center;
+
+}

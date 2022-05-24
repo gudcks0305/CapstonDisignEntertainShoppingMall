@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>상세 페이지</title>
+    <link rel="stylesheet" href="detail.css">
+
+</head>
+<body>
+
+<div class="product_view">
+    <h2>제품 이름</h2>
+    <table>
+        <caption>
+            <details class="hide">
+                <summary>상품정보</summary>
+                판매가, 상품코드, 옵션 및 결제금액 안내
+            </details>
+        </caption>
+        <colgroup>
+            <col style="width:173px;">
+            <col>
+        </colgroup>
+        <tbody>
+        <tr>
+            <th>판매가</th>
+            <td class="price">100,000</td>
+        </tr>
+        <tr>
+            <th>상품코드</th>
+            <td>code8514</td>
+        </tr>
+        <tr>
+            <th>제조사/공급사</th>
+            <td>(주) / 엔터</td>
+        </tr>
+        <tr>
+            <th>구매수량</th>
+            <td>
+                <div class="length">
+                    <input type="number" style="width: 40px" name="amount" value="${row.amount}" min="1">
+                    <input type="hidden" name="productId" value="${row.productId}">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>옵션선택</th>
+            <td>
+                <select>
+                    <option>기본(+0)</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>배송비</th>
+            <td class="price">2,500</td>
+        </tr>
+        <tr>
+            <th>결제금액</th>
+            <td class="total"><b>102,500</b>원</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="img">
+        <img src="" alt="">
+        <ul>
+            <li class="on"><a href="#a"><img src="" alt=""></a></li>
+            <li><a href="#a"><img src="" alt=""></a></li>
+        </ul>
+    </div>
+    <div class="btns">
+        <a href="" class="btn1">장바구니</a>
+        <a href="" class="btn2">구매하기</a>
+    </div>
+</div>
+
+</body>
+</html>
