@@ -35,6 +35,12 @@ public class ItemController {
         model.addAttribute("item", itemService.findById(id));
         return "product/productDetail";
     }
+    //삭제 예정
+    @GetMapping("/item/detail")
+    public String itemInfo1() {
+
+        return "product/productDetail";
+    }
     // 상품 수정 페이지
     @GetMapping("/item/{id}/update")
     public String edit(@PathVariable Long id, Model model) {

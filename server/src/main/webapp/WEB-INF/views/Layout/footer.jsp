@@ -24,7 +24,7 @@
         margin-bottom: 20px;
         font-size: 15px;
         text-align: center;
-        width: 100%
+        width: 100%;
         height: 100%
     }
 
@@ -33,7 +33,7 @@
         margin-bottom: 0px;
         font-size: 15px;
         text-align: center;
-        width: 100%
+        width: 100%;
         height: 100%
     }
 
