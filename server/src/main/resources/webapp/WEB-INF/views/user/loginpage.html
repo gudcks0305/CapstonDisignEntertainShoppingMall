@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginPage</title>
+    <Link rel="stylesheet" href="style2.css">
+    <script src="jquery-3.4.1.js"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap");
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url("KakaoTalk_20220101_063434106.png") no-repeat center;
+            background-size: cover;
+        }
+        body::before {
+        content: "";
+            position: absolute; z-index: 1;
+            top: 0; right: 0; bottom: 0; Left: 0;
+            background-color: rgba(255, 255, 255);
+        }
+        .Login-from {position:relative ; z-index: 2;}
+        .Login-from h1 {
+            font-size: 32px; color: rgb(0, 0, 0);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .int-area {width: 400px; position: relative;
+            margin-top: 20px;
+        }
+        .int-area:first-child {margin-top: 0;}
+        .int-area input{
+            width: 100%;
+            padding: 20px 10px 10px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgb(224, 224, 224);
+            font-size: 18px; color: #fff;
+            outline: none;
+            border-bottom: 1px solid rgba(161, 161, 161, 0.685);
+            font-size: 18px; color: #fff;
+            outline: none;
+        }
+        .int-area label {
+            position: absolute; left: 10PX; top: 15px;
+            transition: all .5 ease;
+        }
+        .int-area input:focus + label,
+        .int-area input:valid + Label {
+            top: -2px;
+            font-size: 13px; color: #ffffff;
+        }
+        .btn-area {margin-top: 30px;}
+
+        .btn-area button {
+            width: 100%; height: 50px;
+            background: #166cea;
+            coLor: #fff;
+            font-size: 20px;
+            border: none;
+            border-radius: 25px;
+        }
+
+        .caption {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .caption a {
+            font-size: 15px; color: #999;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<section class="Login-from">
+    <h1>LOGO DESIGN</h1>
+    <form action="">
+        <div class="int-area">
+            <input type="text" mame="id" id="id"
+                   autocomplete="off" required>
+            <Label for="id">USER NAME</Label>
+        </div>
+        <div class="int-area">
+            <input type="password" mame="pw" id="pw"
+                   autocomplete="off" required>
+            <Label for="pw">PASSWORD</Label>
+        </div>
+        <div class="btn-area">
+            <button type="submit">LOGIN</button>
+        </div>
+    </form>
+    <div class="caption">
+    <a href="">Forgot Password?"</a>
+    </div>
+</section>
+</body>
+</html>
