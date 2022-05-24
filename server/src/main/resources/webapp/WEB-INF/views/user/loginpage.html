@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>LoginPage</title>
-    <Link rel="stylesheet" href="style2.css">
-    <script src="jquery-3.4.1.js"></script>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap");
         * {margin: 0; padding: 0; box-sizing: border-box;}
@@ -14,7 +12,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url("KakaoTalk_20220101_063434106.png") no-repeat center;
+            background: url("") no-repeat center;
             background-size: cover;
         }
         body::before {
@@ -80,17 +78,17 @@
     <h1>LOGO DESIGN</h1>
     <form action="">
         <div class="int-area">
-            <input type="text" mame="id" id="id"
+            <input style="color: black" type="text"  id="username"  name="username"
                    autocomplete="off" required>
-            <Label for="id">USER NAME</Label>
+            <Label for="username">USER NAME</Label>
         </div>
         <div class="int-area">
-            <input type="password" mame="pw" id="pw"
+            <input style="color: black" type="password" id="password"  name="password"
                    autocomplete="off" required>
-            <Label for="pw">PASSWORD</Label>
+            <Label for="password">PASSWORD</Label>
         </div>
         <div class="btn-area">
-            <button type="submit">LOGIN</button>
+            <button id="btn-login" class="btn btn-primary">로그인</button>
         </div>
     </form>
     <div class="caption">

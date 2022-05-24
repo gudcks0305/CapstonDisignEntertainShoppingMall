@@ -18,6 +18,7 @@ public class Post extends BaseEntity {
     private Long postId;
     private String title;
     private String content;
+    private Integer kind = 1;
     @ManyToOne
     @JoinColumn(name = "user")
     private User user;
