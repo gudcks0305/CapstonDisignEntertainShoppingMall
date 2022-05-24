@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+        header .gnb { width: 100%; background-color: #353535;}
+        header .gnb ul { overflow: hidden; width: 1000px; height: 30px; line-height: 30px; margin: 0 auto;}
+        header li { float: left; list-style: none; margin-left: 50px;}
+        header a { color: #ffffff; text-decoration: none; }
+        header .logo {
+            border: 1px solid #cccccc;
+            width: 200px; height: 100px; line-height: 100px;
+            margin: 70px auto;
+            text-align: center;
+        }
+
+       /*=nav .sub*/
+       ul li div {
+            overflow: hidden;
+            background-color: #0B0B61;
+            list-style: none;
+            padding: 0;
+            margin=0;
+        }
+        .sub {
+            position: absolute;
+            display: none;
+            background-color:#FAFAFA;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+        li a:hover {
+            background-color: #282828;
+        }
+        .lnb ul li:hover div{
+            display: block;     /*서브메뉴 보임*/
+        }
+        ul li div a {
+            list-style: none;   /*동글뱅이는 li 때문에 나옴*/
+        }
+        ul li div a {         /*후손만 선택할 때*/
+            text-decoration: none;
+            color:#fff;
+            text-align: center;
+            display: block;     /* a는 인라인 요소이기 때문에 block을 안하면 text-align이 안 먹힘*/
+            font-size: 12px;
+            padding: 7px;
+            white-space: nowrap;    /* 글자 자동 줄 바꿈 방지 */
+        }
+        .sub a{
+            display: block;
+            text-align: left;
+            color:black;
+            width:100px;
+        }
+
+
+
+        header .hit_menu ul { overflow: hidden; width: 1000px; margin: 0 auto 3px; }
+        header .hit_menu li { float: right; margin: 0; text-align: center; }
+        header .hit_menu a {
+            display: block; color: #282828;
+            font-size: 1.1em; padding: 10px 30px; border: 1px solid #cccccc;
+        }
+        header .hit_menu li first-child a{ border-radius: 0 10px 10px 0; }
+        header .hit_menu li first-child a{ border-radius: 10px 0 0 10px; }
+        header .lnb {
+            overflow: hidden;
+            width: 100%; height: 30px;
+            border-top: 1px dashed #cccccc;
+            border-bottom: 1px solid #cccccc;
+            padding: 5px;
+        }
+        header .lnb ul { width: 1000px; margin: 0 auto; }
+        header .lnb li { margin: 5px; line-height: 25px; }
+        header .lnb a { color: #282828; font-size: 1.1em; padding 10px 30px; }
+        #content { width: 1000px; margin: 0 auto; }
+        #content .section1 {
+            overflow: hidden;
+            width: 1000px; height: 400px; margin: 0 auto;
+            border: 1px solid #cccccc;
+        }
+        #content .section1 div{
+            height: 400px; float: left; line-height: 400px; text-align: center;
+            border: 1px solid #cccccc;
+            box-sizing: border-box;
+        }
+        #content .slide_banner {width: 1000px;}
+        #content .section2 div {
+            margin-top: 10px;
+            width: 1000px; height: 400px; line-height: 400px; text-align: center;
+            border: 1px solid #cccccc;
+            box-sizing: border-box;
+        }
+        #content .hit_product {overflow: hidden;}
+        #content .hit_product ul li {
+            list-style: none; float: left; margin: 0 7px 0 0;
+            width: 240px; border: 1px solid #cccccc; box-sizing: border-box;
+        }
+         #content .hit_product ul li:first-child {margin-left: 7px;}
+         #content .md_product {overflow: hidden;}
+         #content .md_product ul li {
+            list-style: none; float: left; margin: 0 7px 0 0;
+            width: 240px; border: 1px solid #cccccc; box-sizing: border-box;
+         }
+         #content .md_product ul li:first-child {margin-left: 7px;}
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="gnb">
+        <ul>
+            <li><a href="#" alt="">Login</a> </li>
+            <li><a href="#" alt="">review</a> </li>
+            <li><a href="#" alt="">community</a> </li>
+            <li><a href="#" alt="">-</a> </li>
+            <li><a href="#" alt="">-</a> </li>
+            <li><a href="#" alt="">-</a> </li>
+            <li><a href="#" alt="">-</a> </li>
+        </ul>
+    </div>
+    <div class="logo">logo</div>
+    <div class="hit_menu">
+        <ul>
+            <li><a href="#" alt="">hit1</a> </li>
+            <li><a href="#" alt="">hit2</a> </li>
+            <li><a href="#" alt="">hit3</a> </li>
+            <li><a href="#" alt="">hit4</a> </li>
+        </ul>
+    </div>
+    <div class="lnb">
+        <ul>
+            <li>
+                <a href="#" alt="">ARTIST</a>
+                <div class="sub">
+                    <a href="#">SM</a>
+                    <a href="#">YG</a>
+                    <a href="#">JYP</a>
+                </div>
+            </li>
+            <li>
+                <a href="#" alt="">GOODS</a>
+                <div class="sub">
+                    <a href="#">Album</a>
+                    <a href="#">Photo</a>
+                    <a href="#">Acc</a>
+                </div>
+            </li>
+            <li><a href="#" alt="">menu3</a> </li>
+            <li><a href="#" alt="">menu4</a> </li>
+        </ul>
+    </div>
+</header>
+<div id="content">
+    <div class="section1">
+        <div class="slide_banner">slide banner</div>
+    </div>
+    <div class="section2">
+        <div class="hit_product">
+            <ul>
+                <li><a href="#" alt="">hit_product1</a> </li>
+                <li><a href="#" alt="">hit_product2</a> </li>
+                <li><a href="#" alt="">hit_product3</a> </li>
+                <li><a href="#" alt="">hit_product4</a> </li>
+            </ul>
+        </div>
+        <div class="md_product">
+            <ul>
+                <li><a href="#" alt="">md_product1</a> </li>
+                <li><a href="#" alt="">md_product2</a> </li>
+                <li><a href="#" alt="">md_product3</a> </li>
+                <li><a href="#" alt="">md_product4</a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer">footer</div>
+</footer>
+</body>
+</html>
