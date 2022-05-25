@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f27486d-6d64-418e-aaa1-d558c53677b6" name="Changes" comment="" />
+    <list default="true" id="0f27486d-6d64-418e-aaa1-d558c53677b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/webapp/WEB-INF/views/user/loginpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/webapp/WEB-INF/views/user/loginpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/views/Layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/views/Layout/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/views/user/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/webapp/WEB-INF/views/user/loginForm.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +31,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/82106/Desktop/CapstonDisignEntertainShoppingMall/server",
+    "last_opened_file_path": "C:/Project/Devtools/CapstonDisignEntertainShoppingMall/server",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -42,6 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652755051575</updated>
       <workItem from="1652755058240" duration="3843000" />
+      <workItem from="1653386403477" duration="38000" />
     </task>
     <servers />
   </component>

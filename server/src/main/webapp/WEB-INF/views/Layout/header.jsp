@@ -17,48 +17,49 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+      background-color: white;
+    }
+    .mySlides {display: none}
+  </style>
   <style>
   </style>
 </head>
 <body>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card-4">
+    <a href="/" class="w3-bar-item w3-button w3-pading-large">FSFE</a>
+    <a href="/" class="w3-bar-item w3-button w3-pading-large" >HOME</a>
+    <a href="#" class="w3-bar-item w3-button w3-pading-large" >ABOUT</a>
+    <a href="#" class="w3-bar-item w3-button w3-pading-large" >ARTIST</a>
+    <a href="/item/list" class="w3-bar-item w3-button w3-pading-large" >GOODS</a>
+    <a href="/post/list" class="w3-bar-item w3-button w3-pading-large" >EVENT</a>
+    <c:choose>
+    <c:when test="${empty principal}">
+      <a href="/auth/loginForm" class="w3-bar-item w3-button w3-pading-large" style="float:right;">login</a>
+      <a  href="/auth/joinForm" class="w3-bar-item w3-button w3-pading-large" style="float:right;">Sign up</a>
+    </c:when>
+    <c:otherwise>
+      <a href="/user/updateForm" class="w3-bar-item w3-button w3-pading-large" style="float:right;">${principal.user.username}'s Info</a>
+      <a href="/logout" class="w3-bar-item w3-button w3-pading-large" style="float:right;">log out</a>
+      <a href="/basket/myBasket" class="w3-bar-item w3-button w3-pading-large" style="float:right;">My Item Basket</a>
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <a class="navbar-brand" href="/">HOME</a>
-  ${principal.user.username}
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-
-
-      <c:choose>
-        <c:when test="${empty principal}">
-          <li class="nav-item">
-            <a class="nav-link" href="/auth/loginForm">로그인</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/auth/joinForm">회원가입</a>
-          </li>
-        </c:when>
-        <c:otherwise>
-          <li class="nav-item">
-            <a class="nav-link" href="/board/saveForm">글쓰기</a>
-          <li class="nav-item">
-            <a class="nav-link" href="/user/updateForm">회원정보</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">로그아웃</a>
-          </li>
-
-        </c:otherwise>
-      </c:choose>
+    </c:otherwise>
 
 
-
-
-
-    </ul>
+    </c:choose>
   </div>
-</nav>
+</div>
+
 <br>
+<br>
+<br>
+<br>
+<br><br>
