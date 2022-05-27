@@ -153,7 +153,7 @@
     <div id="frame">
         <form>
             <div id="frame2">
-                <span style="font-size: 16pt; font-weight: bold;">장바구니</span>
+                <span style="font-size: 16pt; font-weight: bold;"> 구매페이지ㅔ</span>
                 <span class="home">홈 > 장바구니</span>
                 <span></span>
             </div>
@@ -214,8 +214,7 @@
         </div>
 
             <div style="margin: 10px 0; padding-bottom:50px; border-bottom: solid 1px gray;">
-            <span style="margin:0 10px;" class="btnfloat">  선택상품을</span>
-                <button type="button" class="btn default btnfloat" style="background-color: gray; color: #fff;">x 삭제하기</button>
+                <button type="button" class="btn default btnfloat" style="background-color: gray; color: #fff;">x 선택한 상품 삭제하기</button>
             <button type="button" class="btn default btnfloat2" onclick="javascript:history.back()">이전 페이지›</button>
             <span class="clearboth"></span>
     </div>
@@ -249,6 +248,10 @@
             <br/><input style="margin-bottom: 10px;" type="text" id="addr1" size="50"/><br/>
             <input type="text" id="addr2" size="50"/>
         </td>
+    </tr>
+    <tr>
+        <td class="deliverytd">휴대전화&nbsp;<span style="color: red">*</span> </td>
+        <td><input type="text" size="5"/>-<input type="text" size="5"/>-<input type="text" size="5"/></td>
     </tr>
     <tr>
         <td class="deliverytd">이메일&nbsp;<span style="color: red">*</span></td>
@@ -307,7 +310,7 @@
                 <div class="total">
                     <span style="display: inline-block; padding: 20px 10px;">최종 결제 금액 </span><br/>
                     <span style="font-size: 25pt; font-weight: bold; padding: 0px 10px;">0원</span><br/><br/>
-                    <button type="button" class="btn default" style="width: 90%; height: 60px; margin-right: 10px; font-size: 10px;"> 결제하기</button>
+                    <button type="button" class="btn default" style="width: 90%; height: 60px; margin-right: 10px;  background-color: #3c3e70; font-size: 25px;"> 결제하기</button>
                 </div>
             </div>
         </form>
