@@ -153,7 +153,7 @@
     <div id="frame">
         <form>
             <div id="frame2">
-                <span style="font-size: 16pt; font-weight: bold;"> 구매페이지ㅔ</span>
+                <span style="font-size: 16pt; font-weight: bold;"> 구매페이지</span>
                 <span class="home">홈 > 장바구니</span>
                 <span></span>
             </div>

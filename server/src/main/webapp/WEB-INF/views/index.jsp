@@ -5,4 +5,4 @@
 
 <%@ include file="Layout/footer.jsp"%>
 
-<%@ include file="pay/pay.jsp"%>
+<%@ include file="review/ upload.jsp"%>
