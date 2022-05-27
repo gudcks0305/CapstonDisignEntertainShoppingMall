@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()//비활성화(테스트시 ㄱㄱ)
                 .authorizeRequests()
-                .antMatchers("/","/js/**","/auth/**","/css/**","/image/**")
+                .antMatchers("/","/js/**","/auth/**","/css/**","/image/**","/item/*")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

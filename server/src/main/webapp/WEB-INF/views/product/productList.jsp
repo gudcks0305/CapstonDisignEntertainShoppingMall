@@ -25,10 +25,11 @@
             display : flex;
             flex-wrap : wrap;
             justify-content: space-between;
+
         }
 
         .product-list .container .item-list .card {
-            border : 1px solid #eee;
+            border: 3px solid black;
             border-radius: 5px;
             height : 350px;
             width: 250px;
@@ -38,7 +39,7 @@
 
         .product-list .container .item-list .card img {
             height: 200px;
-            width: 250px;
+            width: 235px;
         }
 
         .product-list .container .item-list .card .text p {
@@ -64,20 +65,7 @@
         }
     </style>
     <body>
-    <div class = "nav" >
 
-    </div>
-
-    <section class = "product-list">
-        <div class = "container">
-            <div class = "title">
-
-            </div>
-            <div class = "item-list">
-
-            </div>
-        </div>
-    </section>
 
     <section class = "product-list">
         <div class = "container">
@@ -92,49 +80,18 @@
             </div>
 
             <div class = "item-list">
+                <c:forEach var="item" items="${items.content}">
                 <div class = "card">
                     <div class = "img">
-                        <img src = "" alt = "">
+                        <img src = "${item.itemImageUrl}" alt = "">
                     </div>
                     <div class = "text">
-                        <h2> 상품명1 </h2>
-                        <p> 상품1 짧은 설명 </p>
+                        <h2> ${item.itemTitle} </h2>
+                        <p>${item.itemName}</p>
                         <button><i class = "fas fa-check"></i>상세보기</button>
                     </div>
                 </div>
-
-                <div class = "card">
-                    <div class = "img">
-                        <img src = "" alt = "">
-                    </div>
-                    <div class = "text">
-                        <h2> 상품명2 </h2>
-                        <p> 상품2 짧은 설명 </p>
-                        <button><i class = "fas fa-check"></i>상세보기</button>
-                    </div>
-                </div>
-
-                <div class = "card">
-                    <div class = "img">
-                        <img src = "" alt = "">
-                    </div>
-                    <div class = "text">
-                        <h2> 상품명3 </h2>
-                        <p> 상품3 짧은 설명 </p>
-                        <button><i class = "fas fa-check"></i>상세보기</button>
-                    </div>
-                </div>
-
-                <div class = "card">
-                    <div class = "img">
-                        <img src = "" alt = "">
-                    </div>
-                    <div class = "text">
-                        <h2> 상품명4 </h2>
-                        <p> 상품4 짧은 설명 </p>
-                        <button><i class = "fas fa-check"></i>상세보기</button>
-                    </div>
-                </div>
+                </c:forEach>
 
             </div>
         </div>
