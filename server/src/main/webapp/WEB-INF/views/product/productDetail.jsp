@@ -2,11 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <title>상세 페이지</title>
     <style>
-        body { padding: 50px;}
 
-        .product_view { position: relative;padding: 0 0 0 395px; width: 962px; box-sizing: border-box;}
-        .product_view .img { position: absolute; left: 0; top: 0;}
-        .product_view .img > img { width: 368px; height: 370px; border:1px solid #e8e8e8; }
+
+        .product_view {  position: relative;padding: 0 0 0 600px; box-sizing: border-box;}
+        .product_view .img { position: absolute; left: 0; top: 0; padding-left: 100px;}
+        .product_view .img > img { width: 400px; height: 400px; border:1px solid #e8e8e8; }
         .product_view .img li:after { content: ""; display: block; clear: both;}
         .product_view .img li { float: left; padding: 10px 10px 0 0;}
         .product_view .img li.on img { border-color:#0a56a9;}
@@ -29,7 +29,7 @@
 
 
     <div class="product_view">
-        <h2>제품 이름</h2>
+        <h2>${item.itemTitle}</h2>
         <table>
             <caption>
                 <details class="hide">
@@ -44,54 +44,51 @@
             <tbody>
             <tr>
                 <th>판매가</th>
-                <td class="price">100,000</td>
+                <td class="price">${item.itemPrice} 원</td>
             </tr>
             <tr>
                 <th>상품코드</th>
-                <td>code8514</td>
+                <td>${item.itemId}</td>
+            </tr>
+            <tr>
+                <th>카테고리</th>
+                <td>${item.itemCategory.categoryName}</td>
             </tr>
             <tr>
                 <th>제조사/공급사</th>
-                <td>(주) / 엔터</td>
+                <td>${item.itemOwner.name}</td>
             </tr>
             <tr>
                 <th>구매수량</th>
                 <td>
                     <div class="length">
-                        <input type="number" style="width: 40px" name="amount" value="${row.amount}" min="1">
+                        <input type="number" style="width: 40px" name="amount" value="${row.amount}" min="1" value = "1">
                         <input type="hidden" name="productId" value="${row.productId}">
                     </div>
                 </td>
             </tr>
-            <tr>
-                <th>옵션선택</th>
-                <td>
-                    <select>
-                        <option>기본(+0)</option>
-                    </select>
-                </td>
-            </tr>
+
             <tr>
                 <th>배송비</th>
                 <td class="price">2,500</td>
             </tr>
             <tr>
                 <th>결제금액</th>
-                <td class="total"><b>102,500</b>원</td>
+                <td class="total"><b>${item.itemPrice + 2500}</b>원</td>
             </tr>
             </tbody>
         </table>
         <div class="img">
-            <img src="" alt="">
-            <ul>
-                <li class="on"><a href="#a"><img src="" alt=""></a></li>
-                <li><a href="#a"><img src="" alt=""></a></li>
-            </ul>
+            <img src=${item.itemImageUrl} alt="">
+        </div>
+        <div class="description">
+            ${item.itemDescription}
         </div>
         <div class="btns">
             <a href="" class="btn1">장바구니</a>
             <a href="" class="btn2">구매하기</a>
         </div>
-    </div>
 
+    </div>
+    <br><br>
 <%@ include file="../Layout/footer.jsp"%>

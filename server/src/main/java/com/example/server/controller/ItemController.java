@@ -1,7 +1,11 @@
 package com.example.server.controller;
 
+import com.example.server.entity.Entertainment;
 import com.example.server.repository.Item.itemRepository;
+import com.example.server.service.CategoryService;
+import com.example.server.service.EntertainmentService;
 import com.example.server.service.ItemService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -12,19 +16,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
+@RequiredArgsConstructor
 public class ItemController {
-    @Autowired
-    private ItemService itemService;
 
+    private final ItemService itemService;
+    private final CategoryService categoryService;
+    private final EntertainmentService entertainmentService;
     //상품 추가 페이지
     @GetMapping("/item/add")
-    public String add() {
+    public String add(Model model) {
+        model.addAttribute("category", categoryService.findAll());
+        model.addAttribute("entertainment", entertainmentService.findAll());
         return "product/productAdd";
     }
     // 상품 목록 페이지
     @GetMapping("/item/list")
     public String list(Model model,
                        @PageableDefault(size = 10,sort = "itemId",direction = Sort.Direction.DESC) Pageable pageable) {
+        model.addAttribute("category", categoryService.findAll());
         model.addAttribute("items", itemService.findAll(pageable));
         return "product/productList";
     }

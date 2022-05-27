@@ -72,10 +72,11 @@
             <div class = "title">
                 <h1>PRODUCT LIST</h1>
                 <ul>
-                    <li><a href = "">앨범</a></li>
-                    <li><a href = "">굿즈</a></li>
-                    <li><a href = "">콘서트</a></li>
-                    <li><a href = "">팬클럽</a></li>
+
+                    <c:forEach var="category" items="${category}">
+                        <li><a href=/item/list/${category.categoryId}>${category.categoryName}</a></li>
+                    </c:forEach>
+
                 </ul>
             </div>
 
@@ -88,7 +89,7 @@
                     <div class = "text">
                         <h2> ${item.itemTitle} </h2>
                         <p>${item.itemName}</p>
-                        <button><i class = "fas fa-check"></i>상세보기</button>
+                        <a href="/item/${item.itemId}"><button><i class = "fas fa-check"></i>상세보기</button>
                     </div>
                 </div>
                 </c:forEach>

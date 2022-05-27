@@ -39,10 +39,9 @@
                     <td>소속사</td>
                     <td>
                         <select>
-                            <option>SM</option>
-                            <option>JYP</option>
-                            <option>YG</option>
-                            <option>기타</option>
+                            <c:forEach var="entertainment" items="${entertainment}">
+                                <option value="${entertainment.entertainmentId}">${entertainment.name}</option>
+                            </c:forEach>
                         </select>
                     </td>
                 </tr>
@@ -51,10 +50,9 @@
                     <td>카테고리</td>
                     <td>
                         <select>
-                            <option>앨범</option>
-                            <option>굿즈</option>
-                            <option>콘서트</option>
-                            <option>팬클럽</option>
+                            <c:forEach var="category" items="${category}">
+                                <option value="${category.categoryId}">${category.categoryName}</option>
+                            </c:forEach>
                         </select>
                     </td>
                 </tr>
