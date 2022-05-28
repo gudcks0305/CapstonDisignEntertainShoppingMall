@@ -28,14 +28,7 @@ public class ItemService {
         Entertainment entertainment = entertainmentRepository.findById(requestDto.getItemOwner()).get();
         Category category = categoryRepository.findById(requestDto.getItemCategory()).get();
         Item item = new Item();
-        item.setItemOwner(entertainment);
-        item.setItemCategory(category);
-        item.setItemTitle(requestDto.getItemTitle());
-        item.setItemName(requestDto.getItemName());
-        item.setItemDescription(requestDto.getItemDescription());
-        item.setItemImageUrl(requestDto.getItemImageUrl());
-        item.setItemPrice(requestDto.getItemPrice());
-        item.setItemQuantity(requestDto.getItemQuantity());
+        setItemData(requestDto, entertainment, category, item);
 
         itemRepository.save(item);
     }
@@ -52,7 +45,25 @@ public class ItemService {
     public Page<Item> findAll(Pageable pageable) {
         return itemRepository.findAll(pageable);
     }
+    @Transactional
+    public void update(Long id, ItemRequestDto requestDto) {
+        Entertainment entertainment = entertainmentRepository.findById(requestDto.getItemOwner()).get();
+        Category category = categoryRepository.findById(requestDto.getItemCategory()).get();
 
+        Item item = itemRepository.findById(id).get();
+        setItemData(requestDto, entertainment, category, item);
+    }
+
+    private void setItemData(ItemRequestDto requestDto, Entertainment entertainment, Category category, Item item) {
+        item.setItemOwner(entertainment);
+        item.setItemCategory(category);
+        item.setItemTitle(requestDto.getItemTitle());
+        item.setItemName(requestDto.getItemName());
+        item.setItemDescription(requestDto.getItemDescription());
+        item.setItemImageUrl(requestDto.getItemImageUrl());
+        item.setItemPrice(requestDto.getItemPrice());
+        item.setItemQuantity(requestDto.getItemQuantity());
+    }
 
 
 }

@@ -22,15 +22,6 @@ public class ItemApiController {
 
     @PostMapping("/api/admin/item/add")
     public ResponseDto insert(@RequestBody ItemRequestDto requestDto){
-        System.out.println("requestDto.getItemCategory() : " + requestDto.getItemCategory());
-        System.out.println("requestDto.getItemName() : " + requestDto.getItemName());
-        System.out.println("requestDto.getItemDescription() : " + requestDto.getItemDescription());
-        System.out.println("requestDto.getItemImageUrl() : " + requestDto.getItemImageUrl());
-        System.out.println("requestDto.getItemPrice() : " + requestDto.getItemPrice());
-        System.out.println("requestDto.getItemQuantity() : " + requestDto.getItemQuantity());
-        System.out.println("requestDto.getItemOwner() : " + requestDto.getItemOwner());
-        System.out.println("requestDto.getItemTitle() : " + requestDto.getItemTitle());
-        System.out.println("gege00");
         itemService.save(requestDto);
 
         return new ResponseDto(HttpStatus.OK,"SUCCESS");
@@ -39,6 +30,12 @@ public class ItemApiController {
     public String delete(@PathVariable Long id) {
         itemService.delete(id);
         return "redirect:/item/list";
+    }///api/admin/item/${item.itemId}/update"
+
+    @PutMapping("/api/admin/item/{id}/update")
+    public ResponseDto update(@PathVariable Long id, @RequestBody ItemRequestDto requestDto) {
+        itemService.update(id, requestDto);
+        return new ResponseDto(HttpStatus.OK,"SUCCESS");
     }
 
 }

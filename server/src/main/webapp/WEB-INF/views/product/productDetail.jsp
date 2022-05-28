@@ -87,6 +87,10 @@
         <div class="btns">
             <a href="" class="btn1">장바구니</a>
             <a href="" class="btn2">구매하기</a>
+            <sec:authorize access="principal.User.roleType.getCode() == 'ROLE_ADMIN'">
+                <a href="/api/admin/item/${item.itemId}/update" class="btn2">수정하기</a>
+            </sec:authorize>
+
         </div>
 
     </div>

@@ -51,8 +51,10 @@ public class ItemController {
         return "product/productDetail";
     }
     // 상품 수정 페이지
-    @GetMapping("/item/{id}/update")
+    @GetMapping("/api/admin/item/{id}/update")
     public String edit(@PathVariable Long id, Model model) {
+        model.addAttribute("category", categoryService.findAll());
+        model.addAttribute("entertainment", entertainmentService.findAll());
         model.addAttribute("item", itemService.findById(id));
         return "product/productUpdate";
     }
