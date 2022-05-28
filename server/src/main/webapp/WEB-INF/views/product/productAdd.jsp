@@ -1,7 +1,6 @@
 <%@ include file="../Layout/header.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <head>
-    <meta charset = 'utf-8'>
     <title>상품 등록</title>
 </head>
 <style>
@@ -38,7 +37,7 @@
                 <tr>
                     <td>소속사</td>
                     <td>
-                        <select>
+                        <select id = "itemOwner" name="itemOwner">
                             <c:forEach var="entertainment" items="${entertainment}">
                                 <option value="${entertainment.entertainmentId}">${entertainment.name}</option>
                             </c:forEach>
@@ -49,53 +48,50 @@
                 <tr>
                     <td>카테고리</td>
                     <td>
-                        <select>
+                        <select id = "category" name="category">
                             <c:forEach var="category" items="${category}">
                                 <option value="${category.categoryId}">${category.categoryName}</option>
                             </c:forEach>
                         </select>
                     </td>
                 </tr>
-
+                <tr>
+                    <td>상품 등록 제목</td>
+                    <td><input type = "text"  name="itemTitle" id = "itemTitle" autofocus placeholder = "등록할 제목을 입력하세요" required></td>
+                </tr>
                 <tr>
                     <td>상품명</td>
-                    <td><input type = "text" id = "goods-name" autofocus placeholder = "상품명을 입력하세요" required></td>
+                    <td><input type = "text" name = "itemName"id = "itemName" autofocus placeholder = "상품명을 입력하세요" required></td>
                 </tr>
 
                 <tr>
-                    <td>이미지</td>
-                    <td><input type = "file" id = "picture"></td>
+                    <td>이미지 링크</td>
+                    <td><input type = "text" name = "itemImageUrl"id = "itemImageUrl" autofocus placeholder = "이미지 링크를 입력하세요" required></td>
                 </tr>
 
                 <tr>
                     <td>판매수량</td>
-                    <td><input type='number' id = "number" autofocus placeholder = "수량을 입력하세요" required></td>
+                    <td><input type='number' name="itemQuantity" id = "itemQuantity" autofocus placeholder = "수량을 입력하세요" required></td>
                 </tr>
 
                 <tr>
                     <td>판매가격</td>
-                    <td><input type = 'number' id = "price" autofocus placeholder = "가격을 입력하세요" required></td>
+                    <td><input type = 'number' name="itemPrice" id = "itemPrice" autofocus placeholder = "가격을 입력하세요" required></td>
                 </tr>
 
                 <tr>
                     <td>상품설명</td>
-                    <td><textarea id = "goods-info" cols = "60" rows = "10"  placeholder = "상품 설명을 입력하세요"></textarea></td>
+                    <td><textarea id = "itemDescription" name = "itemDescription"cols = "60" rows = "10"  placeholder = "상품 설명을 입력하세요"></textarea></td>
                 </tr>
 
-                <tr>
-                    <td>비밀번호</td>
-                    <td><input type = password name = pw size=10 maxlength=10></td>
-                </tr>
             </table>
 
             <center>
-                <div id = "buttons">
-                    <input type = "submit" value = "등록">
-                    <input type = "reset" value = "취소">
-                </div>
+                <button id = "btn-save"> 등록</button>
             </center>
         </td>
     </tr>
 </table>
 </body>
+<script src="/js/item.js"></script>
 <%@ include file="../Layout/footer.jsp"%>

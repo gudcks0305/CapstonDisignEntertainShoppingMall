@@ -1,5 +1,6 @@
 package com.example.server.controller.api;
 
+import com.example.server.dto.ItemRequestDto;
 import com.example.server.dto.ResponseDto;
 import com.example.server.entity.Entertainment;
 import com.example.server.entity.Item;
@@ -19,12 +20,22 @@ public class ItemApiController {
     private ItemService itemService;
 
 
-    @PostMapping("/item/add")
-    public ResponseDto insert(@RequestBody Item item){
-        itemService.save(item);
+    @PostMapping("/api/admin/item/add")
+    public ResponseDto insert(@RequestBody ItemRequestDto requestDto){
+        System.out.println("requestDto.getItemCategory() : " + requestDto.getItemCategory());
+        System.out.println("requestDto.getItemName() : " + requestDto.getItemName());
+        System.out.println("requestDto.getItemDescription() : " + requestDto.getItemDescription());
+        System.out.println("requestDto.getItemImageUrl() : " + requestDto.getItemImageUrl());
+        System.out.println("requestDto.getItemPrice() : " + requestDto.getItemPrice());
+        System.out.println("requestDto.getItemQuantity() : " + requestDto.getItemQuantity());
+        System.out.println("requestDto.getItemOwner() : " + requestDto.getItemOwner());
+        System.out.println("requestDto.getItemTitle() : " + requestDto.getItemTitle());
+        System.out.println("gege00");
+        itemService.save(requestDto);
+
         return new ResponseDto(HttpStatus.OK,"SUCCESS");
     }
-    @DeleteMapping("/item/{id}/delete")
+    @DeleteMapping("/api/admin/item/{id}/delete")
     public String delete(@PathVariable Long id) {
         itemService.delete(id);
         return "redirect:/item/list";

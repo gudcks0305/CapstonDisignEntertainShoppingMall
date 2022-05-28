@@ -27,6 +27,7 @@ public class Item  extends BaseEntity{
     @JoinColumn(name = "category_id", nullable = false)
     private Category itemCategory;
     private Integer itemQuantity;
+    @Column(columnDefinition = "boolean default true")
     private boolean itemStatus;
     @ManyToOne
     @JoinColumn(name = "item_owner_id")

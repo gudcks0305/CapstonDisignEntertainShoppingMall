@@ -1,6 +1,11 @@
 package com.example.server.service;
 
+import com.example.server.dto.ItemRequestDto;
+import com.example.server.entity.Category;
+import com.example.server.entity.Entertainment;
 import com.example.server.entity.Item;
+import com.example.server.repository.Category.CategoryRepository;
+import com.example.server.repository.Entertainmet.EntertainmentRepository;
 import com.example.server.repository.Item.JpaItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,8 +18,25 @@ import javax.transaction.Transactional;
 public class ItemService {
     @Autowired
     private JpaItemRepository itemRepository;
+    @Autowired
+    private CategoryRepository categoryRepository;
+    @Autowired
+    private EntertainmentRepository entertainmentRepository;
     @Transactional
-    public void save(Item item) {
+    public void save(ItemRequestDto requestDto) {
+
+        Entertainment entertainment = entertainmentRepository.findById(requestDto.getItemOwner()).get();
+        Category category = categoryRepository.findById(requestDto.getItemCategory()).get();
+        Item item = new Item();
+        item.setItemOwner(entertainment);
+        item.setItemCategory(category);
+        item.setItemTitle(requestDto.getItemTitle());
+        item.setItemName(requestDto.getItemName());
+        item.setItemDescription(requestDto.getItemDescription());
+        item.setItemImageUrl(requestDto.getItemImageUrl());
+        item.setItemPrice(requestDto.getItemPrice());
+        item.setItemQuantity(requestDto.getItemQuantity());
+
         itemRepository.save(item);
     }
 
