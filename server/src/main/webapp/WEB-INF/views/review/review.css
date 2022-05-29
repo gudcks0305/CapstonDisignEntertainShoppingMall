@@ -1,6 +1,6 @@
 .starpoint_wrap{display:inline-block;}
 .starpoint_box{position:relative;background:url(https://hsecode.github.io/images_codepen/codepen_sp_star.png) 0 5px no-repeat;font-size:0;}
-.starpoint_box .starpoint_bg{display:block;position:absolute;top:1.5px;left:0;height:20px;background:url(https://hsecode.github.io/images_codepen/codepen_sp_star.png) 0 -14px no-repeat;pointer-events:none;}
+.starpoint_box .starpoint_bg{display:block;position:absolute;top:0;left:0;height:25px;background:url(https://hsecode.github.io/images_codepen/codepen_sp_star.png) 0 -17px no-repeat;pointer-events:none;}
 .starpoint_box .label_star{display:inline-block;width:10px;height:18px;box-sizing:border-box;}
 .starpoint_box .star_radio{opacity:0;width:0;height:0;position:absolute;}
 .starpoint_box .star_radio:nth-of-type(1):hover ~ .starpoint_bg,
