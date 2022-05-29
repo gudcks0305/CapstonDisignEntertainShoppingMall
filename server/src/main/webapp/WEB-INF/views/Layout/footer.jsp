@@ -9,13 +9,13 @@
             margin-bottom: 0px;
             margin-left: 6px;
 }
-    a:link{
+    span a:link{
         color : rgb(32, 36, 41);}
-    a:visited {
+    span a:visited {
         color : rgb(32, 36, 41);}
-    a:hover {
+    span a:hover {
         color : rgb(32, 36, 41);}
-    a:active {
+    span a:active {
         color : rgb(32, 36, 41);
 }
 

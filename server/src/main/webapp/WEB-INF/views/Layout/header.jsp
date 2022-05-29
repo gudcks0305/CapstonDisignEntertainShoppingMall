@@ -21,17 +21,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
-    body {
-      font-family: "Lato", sans-serif;
-      background-color: white;
-    }
+
     :root {
       --main-color: hotpink;
       --pane-padding: 5px 42px;
     }
     .mySlides {display: none}
-  </style>
-  <style>
   </style>
 </head>
 <body>

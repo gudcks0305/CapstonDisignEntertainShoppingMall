@@ -30,7 +30,9 @@ public class BasketService {
     public int addToBasket(RequestBasketDto basketDto, String userId) {
         Item item = itemRepository.findById(basketDto.getProductId()).get();
         Optional<User> user = Optional.ofNullable(userRepository.findByUsername(userId).orElseThrow(() -> new IllegalArgumentException("유저가 없습니다.")));
-
+        if(basketRepository.existsShoppingBasketByUserAndItem(user.get(), item)){
+            basketRepository.findByUserAndItem(user.get(), item).setQuantity(basketRepository.findByUserAndItem(user.get(), item).getQuantity() + basketDto.getQuantity());
+        }
         basketRepository.save(basketDto.toEntity(user.get() , item , basketDto.getQuantity()));
         return 1;
     }
