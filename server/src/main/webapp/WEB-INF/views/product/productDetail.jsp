@@ -49,6 +49,7 @@
             <tr>
                 <th>상품코드</th>
                 <td>${item.itemId}</td>
+                <input type="hidden" id = "productId" name="productId" value="${item.itemId}">
             </tr>
             <tr>
                 <th>카테고리</th>
@@ -62,8 +63,8 @@
                 <th>구매수량</th>
                 <td>
                     <div class="length">
-                        <input type="number" style="width: 40px" name="amount" value="${row.amount}" min="1" value = "1">
-                        <input type="hidden" name="productId" value="${row.productId}">
+                        <input type="number" style="width: 40px" name="amount" value="${item.itemQuantity}" id = "quantity" min="1" value = "1">
+
                     </div>
                 </td>
             </tr>
@@ -71,10 +72,6 @@
             <tr>
                 <th>배송비</th>
                 <td class="price">2,500</td>
-            </tr>
-            <tr>
-                <th>결제금액</th>
-                <td class="total"><b>${item.itemPrice + 2500}</b>원</td>
             </tr>
             </tbody>
         </table>
@@ -85,7 +82,7 @@
             ${item.itemDescription}
         </div>
         <div class="btns">
-            <a href="" class="btn1">장바구니</a>
+            <button id="btn-save">장바구니에 담기</button>
             <a href="" class="btn2">구매하기</a>
             <sec:authorize access="principal.User.roleType.getCode() == 'ROLE_ADMIN'">
                 <a href="/api/admin/item/${item.itemId}/update" class="btn2">수정하기</a>
@@ -95,4 +92,5 @@
 
     </div>
     <br><br>
+<script src="/js/basket.js"></script>
 <%@ include file="../Layout/footer.jsp"%>

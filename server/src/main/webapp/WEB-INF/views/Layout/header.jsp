@@ -25,6 +25,10 @@
       font-family: "Lato", sans-serif;
       background-color: white;
     }
+    :root {
+      --main-color: hotpink;
+      --pane-padding: 5px 42px;
+    }
     .mySlides {display: none}
   </style>
   <style>
