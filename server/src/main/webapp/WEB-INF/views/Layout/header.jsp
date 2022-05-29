@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="UTF-16">
 <head>
-  <title>Chang Pipe</title>
+  <title>FSFE Entertainment</title>
   <meta charset="utf-16">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -44,13 +44,6 @@
         <c:otherwise>
           <li class="nav-item">
             <a class="nav-link" href="/board/saveForm">글쓰기</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/defective/predict">불량 진단</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/defective/defectiveTable">제품 데이터</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="/user/updateForm">회원정보</a>
           </li>

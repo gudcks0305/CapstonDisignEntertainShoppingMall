@@ -1,4 +1,4 @@
 package com.example.server.repository.User;
 
-public interface MemberRepository {
+public interface UserRepository {
 }

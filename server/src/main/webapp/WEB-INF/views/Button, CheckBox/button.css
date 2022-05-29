@@ -1,0 +1,45 @@
+.body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:transparent;
+}
+
+.btn {
+    font-size: 25px;
+    padding: 15px 30px;
+    border: 3px solid gold;
+    background-color: transparent;
+    color: gold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.4s;
+    overflow: hidden;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: gold;
+    top: 100%;
+    left: 0;
+    transition: all 0.4s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: translateY(-100%);
+}
+
+.btn:hover {
+    color: #3c3e70;
+}
