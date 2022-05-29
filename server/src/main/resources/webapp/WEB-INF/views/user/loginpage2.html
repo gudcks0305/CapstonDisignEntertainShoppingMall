@@ -1,41 +1,36 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>LoginPage</title>
-    <Link rel="stylesheet" href="style2.css">
-    <script src="jquery-3.4.1.js"></script>
+    <title>Login</title>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap");
-        * {margin: 0; padding: 0; box-sizing: border-box;}
-
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: url("KakaoTalk_20220101_063434106.png") no-repeat center;
-            background-size: cover;
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            vertical-align: baseline;
         }
-        body::before {
-        content: "";
-            position: absolute; z-index: 1;
-            top: 0; right: 0; bottom: 0; Left: 0;
-            background-color: rgba(255, 255, 255);
+        header .gnb { width: 100%; background-color: #353535;}
+        header .gnb ul { overflow: hidden; width: 1000px; height: 30px; line-height: 30px; margin: 0 auto;}
+        header li { float: left; list-style: none; margin-left: 50px;}
+        header a { color: #ffffff; text-decoration: none; }
+        #section {
+            width: 200px; height: 100px; line-height: 40px;
+            margin: 250px auto;
+            text-align: center;
         }
-        .Login-from {position:relative ; z-index: 2;}
-        .Login-from h1 {
+        #section { position:relative ; z-index: 2; }
+        #section  h1 {
             font-size: 32px; color: rgb(0, 0, 0);
             text-align: center;
             margin-bottom: 60px;
         }
-        .int-area {width: 400px; position: relative;
+        .int-area {width: 200px; position: relative;
             margin-top: 20px;
         }
         .int-area:first-child {margin-top: 0;}
         .int-area input{
-            width: 100%;
+            width: 90%;
             padding: 20px 10px 10px;
             background-color: transparent;
             border: none;
@@ -47,13 +42,13 @@
             outline: none;
         }
         .int-area label {
-            position: absolute; left: 10PX; top: 15px;
+            position: absolute; left: 50PX; top: 15px;
             transition: all .5 ease;
         }
         .int-area input:focus + label,
         .int-area input:valid + Label {
             top: -2px;
-            font-size: 13px; color: #ffffff;
+            font-size: 18px; color: #ffffff;
         }
         .btn-area {margin-top: 30px;}
 
@@ -65,7 +60,6 @@
             border: none;
             border-radius: 25px;
         }
-
         .caption {
             margin-top: 20px;
             text-align: center;
@@ -77,9 +71,20 @@
     </style>
 </head>
 <body>
-
-<section class="Login-from">
-
+<header>
+    <div class="gnb">
+        <ul>
+            <li><a href="#" alt="">Login</a> </li>
+            <li><a href="#" alt="">review</a> </li>
+            <li><a href="#" alt="">community</a> </li>
+            <li><a href="#" alt="">-</a> </li>
+            <li><a href="#" alt="">-</a> </li>
+            <li><a href="#" alt="">-</a> </li>
+            <li><a href="#" alt="">-</a> </li>
+        </ul>
+    </div>
+</header>
+<div id="section">
     <h1>LOGO DESIGN</h1>
     <form action="">
         <div class="int-area">
@@ -97,8 +102,8 @@
         </div>
     </form>
     <div class="caption">
-    <a href="">Forgot Password?"</a>
+        <a href="">Forgot Password?"</a>
     </div>
-</section>
+</div>
 </body>
 </html>
