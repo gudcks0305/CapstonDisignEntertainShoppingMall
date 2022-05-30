@@ -1,5 +1,6 @@
 package com.example.server.entity;
 
+import com.example.server.model.DeliveryStatusType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,19 +20,16 @@ public class Buy extends BaseEntity {
     @Column(name = "id")
     private Long buyId;
 
-    @ManyToOne
-    @JoinColumn(name = "user",nullable = false)
+    @OneToOne(fetch = FetchType.LAZY)
     private User user;
-    @ManyToOne
-    @JoinColumn(name = "item",nullable = false)
+    @OneToOne(fetch = FetchType.LAZY)
     private Item item;
 
-    @Column(name = "buy_price")
-    private Double buyPrice;
 
     @Column(name = "buy_count")
     private Integer buyCount;
 
-    @Column(name = "buy_total")
-    private Double buyTotalPrice;
+
+
+    private DeliveryStatusType deliveryStatus;
 }

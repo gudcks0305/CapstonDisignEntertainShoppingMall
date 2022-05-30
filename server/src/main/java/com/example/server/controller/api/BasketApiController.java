@@ -7,10 +7,7 @@ import com.example.server.service.BasketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BasketApiController {
@@ -22,9 +19,11 @@ public class BasketApiController {
         int result = basketApiService.addToBasket(basketDto , principalDetail.getUsername());
         return new ResponseDto<>(HttpStatus.OK, result);
     }
-    @DeleteMapping("/api/basket")
-    public ResponseDto<Integer> deleteFromBasket(@RequestBody RequestBasketDto basketDto , @AuthenticationPrincipal PrincipalDetail principalDetail) {
-        int result = basketApiService.deleteFromBasket(basketDto , principalDetail.getUsername());
+    @DeleteMapping("/api/basket/{basketId}")
+    public ResponseDto<Integer> deleteFromBasket(@PathVariable Long basketId , @AuthenticationPrincipal PrincipalDetail principalDetail) {
+        System.out.println(basketId + "       rhrepkhker[hkerphkek[p");
+        System.out.println(principalDetail.getUsername() + "       rhrepkhker[hkerphkek[p");
+        int result = basketApiService.deleteFromBasket(basketId , principalDetail.getUsername());
         return new ResponseDto<>(HttpStatus.OK, result);
     }
 }

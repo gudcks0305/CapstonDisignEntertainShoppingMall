@@ -1,22 +1,17 @@
 <%@ include file="../Layout/header.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>장바구니</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
+<style>
 
-</head>
+</style>
 
-<body>
 
 <form name="orderform" id="orderform" method="post" class="orderform" action="/Page" onsubmit="return false;">
     ${basketList.getTotalElements()}개 종류의 상품이 장바구니에 담겼습니다.
     <input type="hidden" name="cmd" value="order">
-    <div class="basketdiv" id="basket">
-        <div class="row head">
+    <div class="w3-table basketdiv " id="basket" style="text-align: center">
+        <div class="row head" >
             <div class="subdiv">
                 <div class="check">선택</div>
                 <div class="img">이미지</div>
@@ -28,7 +23,6 @@
                 <div class="sum">합계</div>
             </div>
             <div class="subdiv">
-
                 <div class="basketcmd">삭제</div>
             </div>
             <div class="split"></div>
@@ -36,11 +30,11 @@
         <c:set var="total" value="0"/>
         <c:set var="count" value="0"/>
         <c:forEach var="basket" items="${basketList.content}">
-        <div class="row data">
+        <div class="row data" style="height: 100px" id = "${basket.basketId}">
             <div class="subdiv">
                 <div class="check"><input type="checkbox" name="buy"  value="260" checked="" onclick="javascript:basket.checkItem();">&nbsp;</div>
                 <div class="img"><img src= "${basket.item.itemImageUrl}" width="60"></div>
-                <div class="pname">
+                <div class="pname" style="">
                     <span>${basket.item.itemName}</span>
                 </div>
             </div>
@@ -48,9 +42,9 @@
                 <div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="${basket.item.itemPrice}">${basket.item.itemPrice}원</div>
                 <div class="num">
                     <div class="updown">
-                        <input type="text" name="p_num1" id="p_num1" size="2" maxlength="4" class="p_num" value="${basket.quantity}" onkeyup="javascript:basket.changePNum(1);">
-                        <span onclick="javascript:basket.changePNum(1);"><i class="fas fa-arrow-alt-circle-up up"></i></span>
-                        <span onclick="javascript:basket.changePNum(1);"><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                        <input type="text" name="p_num${basket.basketId}" id="p_num${basket.basketId}" size="2" maxlength="4" class="p_num" value="${basket.quantity}" onkeyup="javascript:basket.changePNum(1);">
+                        <span onclick="javascript:basket.changePNum(${basket.basketId});"><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                        <span onclick="javascript:basket.changePNum(${basket.basketId});"><i class="fas fa-arrow-alt-circle-down down"></i></span>
                     </div>
                 </div>
                 <div class="sum">${basket.quantity * basket.item.itemPrice}</div>
@@ -82,8 +76,8 @@
     </div>
 </form>
 
-</body>
+
 <script src="/js/basket.js"></script>
-<script type="text/javascript" src="/js/add.js"></script>
-<link rel="stylesheet" href="/css/add.css" src/>
+<script type="text/javascript" src="/js/mybasket.js"></script>
+<link rel="stylesheet" href="/css/mybasket.css"/>
 <%@ include file="../Layout/footer.jsp"%>

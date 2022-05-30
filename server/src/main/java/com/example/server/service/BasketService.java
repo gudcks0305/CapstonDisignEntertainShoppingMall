@@ -7,7 +7,6 @@ import com.example.server.entity.User;
 import com.example.server.repository.Item.JpaItemRepository;
 import com.example.server.repository.ShoppingBasket.JpaShoppingBasketRepository;
 import com.example.server.repository.User.JpaUserRepository;
-import com.example.server.repository.User.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -37,8 +36,8 @@ public class BasketService {
         return 1;
     }
     @Transactional
-    public int deleteFromBasket(RequestBasketDto basketDto, String userId) {
-        basketRepository.deleteByUser_NameAndBasketId(userId, basketDto.getBasketId());
+    public int deleteFromBasket(Long basketId, String userId) {
+        basketRepository.deleteByUser_UsernameAndBasketId(userId, basketId);
         return 1;
     }
     @Transactional

@@ -19,9 +19,14 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
   <script src="https://www.w3schools.com/lib/w3.js"></script>
   <style>
-
+    .w3-lobster {
+      font-family: "Lobster", serif;
+    }
+    
     :root {
       --main-color: hotpink;
       --pane-padding: 5px 42px;
@@ -30,7 +35,7 @@
   </style>
 </head>
 <body>
-<div class="w3-top">
+<div class="w3-top w3-lobster">
   <div class="w3-bar w3-white w3-card-4">
     <a href="/" class="w3-bar-item w3-button w3-pading-large">FSFE</a>
     <a href="/" class="w3-bar-item w3-button w3-pading-large" >HOME</a>
@@ -47,7 +52,7 @@
       <a href="/user/updateForm" class="w3-bar-item w3-button w3-pading-large" style="float:right;">${principal.user.username}'s Info</a>
       <a href="/logout" class="w3-bar-item w3-button w3-pading-large" style="float:right;">log out</a>
       <a href="/basket/myBasket" class="w3-bar-item w3-button w3-pading-large" style="float:right;">My Item Basket</a>
-
+      <a href="/buy/myBuyList" class="w3-bar-item w3-button w3-pading-large" style="float:right;">My purchase history</a>
     </c:otherwise>
 
 

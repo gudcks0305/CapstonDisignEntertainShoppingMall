@@ -4,6 +4,7 @@ let basket = {
 //체크한 장바구니 상품 비우기
     delCheckedItem: function(){
         document.querySelectorAll("input[name=buy]:checked").forEach(function (item) {
+            ;
             item.parentElement.parentElement.parentElement.remove();
         });
 //AJAX 서버 업데이트 전송
@@ -14,8 +15,21 @@ let basket = {
     },
 //장바구니 전체 비우기
     delAllItem: function(){
+        function deleteById(basketId) {
+            $.ajax({
+                type : "DELETE",
+                url:"/api/basket/"+basketId,
+                dataType :"json"
+            }).done(function (res){
+            }).fail(function (err){
+                alert(JSON.stringify(err))
+            }); // 통신을 이용해서 3개의 데이터를 제이슨으로 변경하여 insert요청
+        }
+
         document.querySelectorAll('.row.data').forEach(function (item) {
             item.remove();
+            let basketId = item.valueOf().id;
+            deleteById(basketId);
         });
 //AJAX 서버 업데이트 전송
 
@@ -45,6 +59,7 @@ let basket = {
     },
 //개별 수량 변경
     changePNum: function (pos) {
+
         var item = document.querySelector('input[name=p_num'+pos+']');
         var p_num = parseInt(item.getAttribute('value'));
         var newval = event.target.classList.contains('up') ? p_num+1 : event.target.classList.contains('down') ? p_num-1 : event.target.value;
@@ -67,9 +82,25 @@ let basket = {
         this.updateUI();
     },
     delItem: function () {
-        event.target.parentElement.parentElement.parentElement.remove();
-        this.reCalc();
-        this.updateUI();
+        let basketId = event.target.parentElement.parentElement.parentElement.valueOf().id;
+        this.deleteById(basketId);
+
+    },
+    deleteById:function (basketId){
+
+        console.log(basketId)
+        $.ajax({
+            type : "DELETE",
+            url:"/api/basket/"+basketId,
+            dataType :"json"
+        }).done(function (res){
+            location.href="/basket/myBasket";
+
+
+        }).fail(function (err){
+            alert(JSON.stringify(err))
+        }).bind(this);
+
     }
 }
 
