@@ -27,8 +27,9 @@
     </style>
 
 
-
+    <br><br>
     <div class="product_view">
+
         <h2>${item.itemTitle}</h2>
         <table>
             <caption>

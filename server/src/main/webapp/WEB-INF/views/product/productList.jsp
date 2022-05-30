@@ -1,7 +1,7 @@
 <%@ include file="../Layout/header.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <style>
-        .product-list {
+       .product-list {
             padding-top: 70px;
             padding-bottom: 70px;
         }
@@ -26,20 +26,21 @@
             flex-wrap : wrap;
             justify-content: space-between;
 
+
         }
 
         .product-list .container .item-list .card {
-            border: 3px solid black;
+            border: 2px solid black;
             border-radius: 5px;
-            height : 350px;
-            width: 250px;
-            padding: 5px;
+            width: 240px;
+
             margin-bottom: 10px;
         }
 
         .product-list .container .item-list .card img {
-            height: 200px;
-            width: 235px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
         }
 
         .product-list .container .item-list .card .text p {
@@ -68,8 +69,8 @@
 
 
     <section class = "product-list">
-        <div class = "container">
-            <div class = "title">
+        <div class = "container w3-container">
+            <div class = "title ">
                 <h1>PRODUCT LIST</h1>
                 <ul>
 
@@ -80,20 +81,20 @@
                 </ul>
             </div>
 
-            <div class = "item-list">
+            <div class = "item-list w3-container">
                 <c:forEach var="item" items="${items.content}">
-                <div class = "card">
+                <div  class="card w3-card-4" style="width:25%">
                     <div class = "img">
                         <img src = "${item.itemImageUrl}" alt = "">
                     </div>
-                    <div class = "text">
+                    <div class = "text w3-container">
                         <h2> ${item.itemTitle} </h2>
                         <p>${item.itemName}</p>
                         <a href="/item/${item.itemId}"><button><i class = "fas fa-check"></i>상세보기</button>
+                        </a>
                     </div>
                 </div>
                 </c:forEach>
-
             </div>
         </div>
     </section>

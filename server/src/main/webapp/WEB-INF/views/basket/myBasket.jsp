@@ -50,7 +50,11 @@
                 <div class="sum">${basket.quantity * basket.item.itemPrice}</div>
             </div>
             <div class="subdiv">
-                <div class="basketcmd"><a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem();">삭제</a></div>
+                <div class="basketcmd">
+                    <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem();">
+                    <span class="material-icons">delete</span>
+                    </a>
+                </div>
             </div>
         </div>
             <c:set var="total" value="${total + basket.quantity * basket.item.itemPrice}"/>
