@@ -26,7 +26,7 @@ public class ItemApiController {
 
         return new ResponseDto(HttpStatus.OK,"SUCCESS");
     }
-    @DeleteMapping("/api/admin/item/{id}/delete")
+    @DeleteMapping("/api/admin/item/{id}")
     public String delete(@PathVariable Long id) {
         itemService.delete(id);
         return "redirect:/item/list";

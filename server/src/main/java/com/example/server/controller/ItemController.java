@@ -23,12 +23,7 @@ public class ItemController {
     private final CategoryService categoryService;
     private final EntertainmentService entertainmentService;
     //상품 추가 페이지
-    @GetMapping("/item/add")
-    public String add(Model model) {
-        model.addAttribute("category", categoryService.findAll());
-        model.addAttribute("entertainment", entertainmentService.findAll());
-        return "product/productAdd";
-    }
+
     // 상품 목록 페이지
     @GetMapping("/item/list")
     public String list(Model model,
@@ -50,14 +45,8 @@ public class ItemController {
 
         return "product/productDetail";
     }
-    // 상품 수정 페이지
-    @GetMapping("/api/admin/item/{id}/update")
-    public String edit(@PathVariable Long id, Model model) {
-        model.addAttribute("category", categoryService.findAll());
-        model.addAttribute("entertainment", entertainmentService.findAll());
-        model.addAttribute("item", itemService.findById(id));
-        return "product/productUpdate";
-    }
+
+
 
 
 

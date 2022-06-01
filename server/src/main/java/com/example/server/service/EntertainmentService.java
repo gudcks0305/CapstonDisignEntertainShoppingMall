@@ -20,6 +20,7 @@ public class EntertainmentService {
         entertainment.setDescription(entertainmentDto.getDescription());
         entertainment.setImageUrl(entertainment.getImageUrl());
         entertainment.setName(entertainmentDto.getName());
+        entertainmentRepository.save(entertainment);
     }
     @Transactional(readOnly = true)
     public List<Entertainment> findAll(){

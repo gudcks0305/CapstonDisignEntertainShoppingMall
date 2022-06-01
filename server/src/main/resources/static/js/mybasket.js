@@ -1,10 +1,9 @@
-let basket = {
+let mybasket = {
     totalCount: 0,
     totalPrice: 0,
 //체크한 장바구니 상품 비우기
     delCheckedItem: function(){
         document.querySelectorAll("input[name=buy]:checked").forEach(function (item) {
-            ;
             item.parentElement.parentElement.parentElement.remove();
         });
 //AJAX 서버 업데이트 전송

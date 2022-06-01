@@ -15,9 +15,7 @@
     table.table2 tr {
         width: 100px;
         padding: 10px;
-        font-weight: bold;
-        vertical-align: top;
-        border-bottom: 1px solid #ccc;
+        
     }
     table.table2 td {
         width: 500px;

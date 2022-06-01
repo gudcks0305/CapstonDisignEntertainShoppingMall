@@ -61,7 +61,11 @@
       <a href="/buy/myBuyList" class="w3-bar-item w3-button w3-pading-large" style="float:right;">
         <span class="material-icons">shopping_bag</span>
       </a>
-
+      <sec:authorize access="principal.User.roleType.getCode() == 'ROLE_ADMIN'">
+        <a href="/admin/manage" class="w3-bar-item w3-button w3-pading-large" style="float:right;">
+          <span class="material-icons">build</span>
+        </a>
+      </sec:authorize>
     </c:otherwise>
 
 

@@ -36,6 +36,9 @@
                 <details class="hide">
                     <summary>상품정보</summary>
                     판매가, 상품코드, 옵션 및 결제금액 안내
+                    <div class="description">
+                        ${item.itemDescription}
+                    </div>
                 </details>
             </caption>
             <colgroup>
@@ -64,7 +67,7 @@
                 <th>구매수량</th>
                 <td>
                     <div class="length">
-                        <input type="number" style="width: 40px" name="amount" value="${item.itemQuantity}" id = "quantity" min="1" value = "1">
+                        <input type="number" style="width: 40px" name="amount" value="1" id = "quantity" min="1" value = "1">
 
                     </div>
                 </td>
@@ -79,19 +82,22 @@
         <div class="img">
             <img src=${item.itemImageUrl} alt="">
         </div>
-        <div class="description">
-            ${item.itemDescription}
-        </div>
+
         <div class="btns">
-            <button id="btn-save">장바구니에 담기</button>
+            <a href="" class="btn2" onclick="basket.save()">장바구니</a>
             <a href="" class="btn2">구매하기</a>
-            <sec:authorize access="principal.User.roleType.getCode() == 'ROLE_ADMIN'">
-                <a href="/api/admin/item/${item.itemId}/update" class="btn2">수정하기</a>
-            </sec:authorize>
+            <c:if test="${not empty principal}">
+                <sec:authorize access="principal.User.roleType.getCode() == 'ROLE_ADMIN'">
+                    <br><br>
+                    <a href="/api/admin/item/${item.itemId}/update" class="btn2">수정하기</a>
+                    <a href="/" class="btn2" onclick="item.deleteById()">삭제하기</a>
+                </sec:authorize>
+            </c:if>
 
         </div>
 
     </div>
     <br><br>
+<script src="/js/item.js"></script>
 <script src="/js/basket.js"></script>
 <%@ include file="../Layout/footer.jsp"%>

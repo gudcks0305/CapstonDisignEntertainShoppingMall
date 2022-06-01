@@ -88,6 +88,7 @@
                         <img src = "${item.itemImageUrl}" alt = "">
                     </div>
                     <div class = "text w3-container">
+                        <p style="float: right">${item.itemCategory.categoryName}</p>
                         <h2> ${item.itemTitle} </h2>
                         <p>${item.itemName}</p>
                         <a href="/item/${item.itemId}"><button><i class = "fas fa-check"></i>상세보기</button>

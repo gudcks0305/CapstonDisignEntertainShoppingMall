@@ -1,4 +1,4 @@
-let index = {
+let basket = {
     init : function (){
         $("#btn-save").on("click", ()=>{
             this.save();
@@ -40,7 +40,7 @@ let index = {
         console.log(basketId)
         $.ajax({
             type : "DELETE",
-            url:"/api/busket/"+basketId,
+            url:"/api/basket/"+basketId,
             dataType :"json"
         }).done(function (res){
             alert("삭제가 완료되었습니다.");
@@ -53,4 +53,4 @@ let index = {
 
 }
 
-index.init();
+basket.init();

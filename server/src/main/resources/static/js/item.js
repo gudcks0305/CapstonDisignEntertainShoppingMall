@@ -1,4 +1,4 @@
-let index = {
+let item = {
     init : function (){
         $("#btn-save").on("click", ()=>{
             this.save();
@@ -67,7 +67,22 @@ let index = {
         }); // 통신을 이용해서 3개의 데이터를 제이슨으로 변경하여 insert요청
 
     },
+    deleteById:function (){
+        let id = $("#productId").val();
+        console.log(id)
+        $.ajax({
+            type : "DELETE",
+            url:"/api/admin/item/"+id,
+            dataType :"json"
+        }).done(function (res){
+            alert("삭제가 완료되었습니다.");
+            location.href ="/";
+        }).fail(function (err){
+            alert(JSON.stringify(err))
+        }); // 통신을 이용해서 3개의 데이터를 제이슨으로 변경하여 insert요청
+
+    }
 
 }
 
-index.init();
+item.init();

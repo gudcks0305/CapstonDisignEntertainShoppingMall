@@ -19,6 +19,7 @@ public class CategoryService {
         Category category  = new Category();
         category.setCategoryName(requestDto.getCategoryName());
         category.setDescription(requestDto.getDescription());
+        categoryRepository.save(category);
     }
     @Transactional(readOnly = true)
     public List<Category> findAll(){

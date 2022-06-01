@@ -32,7 +32,7 @@
         <c:forEach var="basket" items="${basketList.content}">
         <div class="row data" style="height: 100px" id = "${basket.basketId}">
             <div class="subdiv">
-                <div class="check"><input type="checkbox" name="buy"  value="260" checked="" onclick="javascript:basket.checkItem();">&nbsp;</div>
+                <div class="check"><input type="checkbox" name="buy"  value="260" checked="" onclick="javascript:mybasket.checkItem();">&nbsp;</div>
                 <div class="img"><img src= "${basket.item.itemImageUrl}" width="60"></div>
                 <div class="pname" style="">
                     <span>${basket.item.itemName}</span>
@@ -42,16 +42,16 @@
                 <div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="${basket.item.itemPrice}">${basket.item.itemPrice}원</div>
                 <div class="num">
                     <div class="updown">
-                        <input type="text" name="p_num${basket.basketId}" id="p_num${basket.basketId}" size="2" maxlength="4" class="p_num" value="${basket.quantity}" onkeyup="javascript:basket.changePNum(1);">
-                        <span onclick="javascript:basket.changePNum(${basket.basketId});"><i class="fas fa-arrow-alt-circle-up up"></i></span>
-                        <span onclick="javascript:basket.changePNum(${basket.basketId});"><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                        <input type="text" name="p_num${basket.basketId}" id="p_num${basket.basketId}" size="2" maxlength="4" class="p_num" value="${basket.quantity}" onkeyup="javascript:mybasket.changePNum(1);">
+                        <span onclick="javascript:mybasket.changePNum(${basket.basketId});"><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                        <span onclick="javascript:mybasket.changePNum(${basket.basketId});"><i class="fas fa-arrow-alt-circle-down down"></i></span>
                     </div>
                 </div>
                 <div class="sum">${basket.quantity * basket.item.itemPrice}</div>
             </div>
             <div class="subdiv">
                 <div class="basketcmd">
-                    <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem();">
+                    <a href="javascript:void(0)" class="abutton" onclick="javascript:mybasket.delItem();">
                     <span class="material-icons">delete</span>
                     </a>
                 </div>
@@ -65,8 +65,8 @@
     </div>
 
     <div class="right-align basketrowcmd">
-        <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delCheckedItem();">선택상품삭제</a>
-        <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delAllItem();">장바구니비우기</a>
+        <a href="javascript:void(0)" class="abutton" onclick="javascript:mybasket.delCheckedItem();">선택상품삭제</a>
+        <a href="javascript:void(0)" class="abutton" onclick="javascript:mybasket.delAllItem();">장바구니비우기</a>
     </div>
 
     <div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: ${count}개</div>
