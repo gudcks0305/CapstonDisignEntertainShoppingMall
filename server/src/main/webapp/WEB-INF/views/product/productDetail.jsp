@@ -90,7 +90,7 @@
             <c:if test="${not empty principal}">
                 <sec:authorize access="principal.User.roleType.getCode() == 'ROLE_ADMIN'">
                     <br><br>
-                    <a href="/api/admin/item/${item.itemId}/update" class="btn2">수정하기</a>
+                    <a href="/admin/item/${item.itemId}/update" class="btn2">수정하기</a>
                     <a href="/" class="btn2" onclick="item.deleteById()">삭제하기</a>
                 </sec:authorize>
             </c:if>

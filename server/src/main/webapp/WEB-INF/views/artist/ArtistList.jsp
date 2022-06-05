@@ -1,11 +1,15 @@
 <%@ include file="../Layout/header.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<div class="w3-card-4 w3-margin" style="width:25%">
-    <c:forEach items="${artistList}" var="artist">
-        <div class="w3-display-container w3-text-white">
+    <style>
+
+    </style>
+<c:forEach items="${artistList}" var="artist">
+<div class="w3-card-4 w3-margin grid w3-quarter  ">
+
+        <div class="w3-display-container w3-text-white w3-hover-shadow" >
             <a href="/item/artist/${artist.artistId}">
-                <img src="${artist.artistImageUrl}" alt="Lights" style="width:100%">
+                <img src="${artist.artistImageUrl}" alt="Lights" style= "width:100% ; height: 30vh">
             </a>
             <div class="w3-xlarge w3-display-bottomleft w3-padding">${artist.artistName}</div>
         </div>
@@ -32,6 +36,7 @@
                 </a>
             </div>
         </div>
-    </c:forEach>
+
 </div>
+</c:forEach>
 <%@ include file="../Layout/footer.jsp"%>

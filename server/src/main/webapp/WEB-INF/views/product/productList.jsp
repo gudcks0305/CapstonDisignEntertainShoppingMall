@@ -78,17 +78,27 @@
 
         <div class = "container w3-container">
             <div class="w3-row slide" style="text-align: center;background: linear-gradient(90deg, #FFC0CB, skyblue );" >
+
                 <c:forEach var="item" items="${items.content}" >
                     <img class="goods-slide w3-circle w3-opacity" src="${item.itemImageUrl}" width="400px" height="300px" style="display: block;margin: 10px auto;">
+
                 </c:forEach>
             </div>
             <div class = "title ">
                 <h1>PRODUCT LIST</h1>
                 <ul>
+                    <c:if test="${arts == null}">
+                        <c:forEach var="category" items="${category}">
+                            <li ><a class="category" href=/item/category/${category.categoryId}>${category.categoryName}</a></li>
+                        </c:forEach>
+                    </c:if>
+                    <c:if test="${arts != null}">
+                        <c:forEach var="category" items="${category}">
+                            <li ><a class="category" href=/item/artist/${arts}/${category.categoryId}>${category.categoryName}</a></li>
+                        </c:forEach>
+                    </c:if>
 
-                    <c:forEach var="category" items="${category}">
-                        <li><a href=/item/list/${category.categoryId}>${category.categoryName}</a></li>
-                    </c:forEach>
+
 
                 </ul>
             </div>
@@ -97,7 +107,7 @@
                 <c:forEach var="item" items="${items.content}">
                 <div  class="card w3-card-4" style="width:25%">
                     <div class = "img">
-                        <img src = "${item.itemImageUrl}" alt = "">
+                        <img src = "${item.itemImageUrl}" style="height: 300px" alt = "">
                     </div>
                     <div class = "text w3-container">
                         <p style="float: right">${item.itemCategory.categoryName}</p>

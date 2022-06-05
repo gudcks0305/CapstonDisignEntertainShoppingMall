@@ -39,11 +39,34 @@ public class ItemController {
         model.addAttribute("item", itemService.findById(id));
         return "product/productDetail";
     }
+    @GetMapping("/item/category/{categoryId}")
+    public String categoryList(@PathVariable Long categoryId, Model model,
+                               @PageableDefault(size = 10,sort = "itemId",direction = Sort.Direction.DESC) Pageable pageable) {
+        model.addAttribute("category", categoryService.findAll());
+        model.addAttribute("items", itemService.findAllByCategoryId(categoryId, pageable));
+        return "product/productList";
+    }
+    @GetMapping("/item/entertainment/{entertainmentId}")
+    public String entertainmentList(@PathVariable Long entertainmentId, Model model,
+                                    @PageableDefault(size = 10,sort = "itemId",direction = Sort.Direction.DESC) Pageable pageable) {
+        model.addAttribute("category", categoryService.findAll());
+        model.addAttribute("items", itemService.findAllByEntertainmentId(entertainmentId, pageable));
+        return "product/productList";
+    }
     @GetMapping("/item/artist/{artistId}")
     public String artistItemList(@PathVariable Long artistId, Model model
     ,  @PageableDefault(size = 10,sort = "itemId",direction = Sort.Direction.DESC) Pageable pageable) {
         model.addAttribute("category", categoryService.findAll());
         model.addAttribute("items", itemService.findAllByArtistId(artistId , pageable));
+        model.addAttribute("arts",artistId);
+        return "product/productList";
+    }
+    @GetMapping("/item/artist/{artistId}/{categoryId}")
+    public String artistItemList(@PathVariable Long artistId, @PathVariable Long categoryId, Model model
+            ,  @PageableDefault(size = 10,sort = "itemId",direction = Sort.Direction.DESC) Pageable pageable) {
+        model.addAttribute("category", categoryService.findAll());
+        model.addAttribute("items", itemService.findAllByArtistIdAndCategoryId(artistId, categoryId, pageable));
+        model.addAttribute("arts",artistId);
         return "product/productList";
     }
     //삭제 예정

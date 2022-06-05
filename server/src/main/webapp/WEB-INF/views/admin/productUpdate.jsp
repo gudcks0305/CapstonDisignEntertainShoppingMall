@@ -45,6 +45,16 @@
                         </select>
                     </td>
                 </tr>
+                <tr>
+                    <td>아티스트</td>
+                    <td>
+                        <select id = "itemArtist" name="itemArtist">
+                            <c:forEach var="artist" items="${artistList}">
+                            <option value="${artist.artistId}">${artist.entertainment.name}  ${artist.artistName}</option>
+                            </c:forEach>
+
+                    </td>
+                </tr>
 
                 <tr>
                     <td>카테고리</td>
@@ -64,7 +74,7 @@
                 </tr>
                 <tr>
                     <td>상품명</td>
-                    <td><input type = "text" name = "itemName"i d = "itemName" autofocus placeholder = "상품명을 입력하세요"  value="${item.itemName}" required></td>
+                    <td><input type = "text" name = "itemName" id = "itemName" autofocus placeholder = "상품명을 입력하세요"  value="${item.itemName}" required></td>
                 </tr>
 
                 <tr>

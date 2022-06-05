@@ -75,7 +75,25 @@ public class ItemService {
 
     public Page<Item> findAllByArtistId(Long artistId, Pageable pageable) {
         Page<Item> list =  itemRepository.findAllByItemArtist_ArtistId(artistId , pageable);
- 
+
+        return list;
+    }
+
+    public Page<Item> findAllByCategoryId(Long categoryId, Pageable pageable) {
+        Page<Item> list =  itemRepository.findAllByItemCategory_CategoryId(categoryId , pageable);
+
+        return list;
+    }
+
+    public Object findAllByEntertainmentId(Long entertainmentId, Pageable pageable) {
+        Page<Item> list =  itemRepository.findAllByItemOwner_EntertainmentId(entertainmentId , pageable);
+
+        return list;
+    }
+
+    public Object findAllByArtistIdAndCategoryId(Long artistId, Long categoryId, Pageable pageable) {
+        Page<Item> list =  itemRepository.findAllByItemArtist_ArtistIdAndItemCategory_CategoryId(artistId, categoryId , pageable);
+
         return list;
     }
 }

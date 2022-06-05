@@ -36,6 +36,7 @@ public class adminController {
     // 상품 수정 페이지
     @GetMapping("/admin/item/{id}/update")
     public String edit(@PathVariable Long id, Model model) {
+        model.addAttribute("artistList", artistService.findAll());
         model.addAttribute("category", categoryService.findAll());
         model.addAttribute("entertainment", entertainmentService.findAll());
         model.addAttribute("item", itemService.findById(id));

@@ -27,6 +27,7 @@
         text-align: center;
         width: 100%;
         height: 100%;
+        display: inline-block;
 
     }
 
@@ -52,7 +53,7 @@
 
 
 </style>
-
+<br>
 <div class="f1">
     <hr>
     <span> <a href="#"> <strong> 개인정보처리방침 </strong> </a> </span>

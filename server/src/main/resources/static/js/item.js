@@ -44,6 +44,7 @@ let item = {
         let id = $("#itemId").val();
         let data = {
             itemOwner : $("#itemOwner").val(),
+            itemArtist : $("#itemArtist").val(),
             itemCategory : $("#category").val(),
             itemTitle : $("#itemTitle").val(),
             itemName : $("#itemName").val(),

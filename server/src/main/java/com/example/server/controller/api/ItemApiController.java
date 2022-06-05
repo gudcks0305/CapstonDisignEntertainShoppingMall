@@ -34,6 +34,10 @@ public class ItemApiController {
 
     @PutMapping("/api/admin/item/{id}/update")
     public ResponseDto update(@PathVariable Long id, @RequestBody ItemRequestDto requestDto) {
+        System.out.println(id);
+        System.out.println(requestDto.getItemCategory());
+        System.out.println(requestDto.getItemArtist());
+        System.out.println(requestDto.getItemOwner());
         itemService.update(id, requestDto);
         return new ResponseDto(HttpStatus.OK,"SUCCESS");
     }
