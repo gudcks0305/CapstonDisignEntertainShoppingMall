@@ -46,7 +46,7 @@
                 </div>
             </li>
         </a>
-        <a href="#">
+        <a href="/admin/artist/add">
             <li class="w3-bar">
                 <img src="https://st2.depositphotos.com/4403291/10075/v/450/depositphotos_100759088-stock-illustration-star-vector-logo-template.jpg"
                      class="w3-bar-item w3-circle w3-hide-small" style="width:85px">

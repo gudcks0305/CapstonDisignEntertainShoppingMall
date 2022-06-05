@@ -41,7 +41,7 @@
     <a href="/" class="w3-bar-item w3-button w3-pading-large">FSFE</a>
     <a href="/" class="w3-bar-item w3-button w3-pading-large" >HOME</a>
     <a href="#" class="w3-bar-item w3-button w3-pading-large" >ABOUT</a>
-    <a href="#" class="w3-bar-item w3-button w3-pading-large" >ARTIST</a>
+    <a href="/artist/list" class="w3-bar-item w3-button w3-pading-large" >ARTIST</a>
     <a href="/item/list" class="w3-bar-item w3-button w3-pading-large" >GOODS</a>
     <a href="/post/list" class="w3-bar-item w3-button w3-pading-large" >EVENT</a>
     <c:choose>
@@ -55,7 +55,16 @@
       <a href="/logout" class="w3-bar-item w3-button w3-pading-large" style="float:right;">log out</a>
       <a href="/user/updateForm" class="w3-bar-item w3-button w3-pading-large" style="float:right;">
           ${principal.user.username}'s Info
-            <span class="material-icons">account_circle</span>
+            <c:choose>
+              <c:when test="${principal.user.imageUrl != null}">
+                <img src="${principal.user.imageUrl}" width="30" height="30" style="border-radius: 50%;">
+              </c:when>
+              <c:otherwise>
+                <span class="material-icons">account_circle</span>
+              </c:otherwise>
+            </c:choose>
+
+
       </a>
       <a href="/basket/myBasket" class="w3-bar-item w3-button w3-pading-large" style="float:right;"><span class="material-icons">shopping_cart</span></a>
       <a href="/buy/myBuyList" class="w3-bar-item w3-button w3-pading-large" style="float:right;">

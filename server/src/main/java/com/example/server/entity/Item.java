@@ -32,5 +32,8 @@ public class Item  extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "item_owner_id")
     private Entertainment itemOwner;
+    @ManyToOne
+    @JoinColumn(name = "item_artist_id")
+    private Artist itemArtist;
 }
 

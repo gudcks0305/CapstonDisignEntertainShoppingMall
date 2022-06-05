@@ -7,6 +7,7 @@ import lombok.Getter;
 @Data
 public class ItemRequestDto {
     private Long itemOwner;
+    private Long itemArtist;
     private Long itemCategory;
     private String itemTitle;
     private String itemName;

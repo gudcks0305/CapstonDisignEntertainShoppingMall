@@ -32,6 +32,7 @@ public class User  extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "favorite_artist_id")
     private Artist favoriteArtist;
+    @ColumnDefault("0")
     private Integer moneyPoint;
     private boolean isActive;
     private boolean isDeleted;

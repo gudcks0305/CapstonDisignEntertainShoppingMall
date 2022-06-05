@@ -25,4 +25,13 @@ public class CategoryService {
     public List<Category> findAll(){
         return categoryRepository.findAll();
     }
+
+    @Transactional
+    public void update(CategoryRequestDto requestDto) {
+        Category category = categoryRepository.findById(requestDto.getCategoryId()).
+                orElseThrow(()
+                        -> new IllegalArgumentException("해당 카테고리가 없습니다."));
+        category.setCategoryName(requestDto.getCategoryName());
+        category.setDescription(requestDto.getDescription());
+    }
 }

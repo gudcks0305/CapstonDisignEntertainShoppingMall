@@ -1,5 +1,7 @@
 package com.example.server.controller;
 
+import com.example.server.entity.Artist;
+import com.example.server.service.ArtistService;
 import com.example.server.service.CategoryService;
 import com.example.server.service.EntertainmentService;
 import com.example.server.service.ItemService;
@@ -15,7 +17,7 @@ public class adminController {
     private final CategoryService categoryService;
     private final EntertainmentService entertainmentService;
     private final ItemService itemService;
-
+    private final ArtistService artistService;
     @GetMapping("/admin/manage")
     public String manage() {
         return "admin/manage";
@@ -28,6 +30,7 @@ public class adminController {
     public String add(Model model) {
         model.addAttribute("category", categoryService.findAll());
         model.addAttribute("entertainment", entertainmentService.findAll());
+        model.addAttribute("artistList", artistService.findAll());
         return "admin/productAdd";
     }
     // 상품 수정 페이지

@@ -25,11 +25,11 @@
         <c:forEach var="buy" items="${buyList}">
         <tr>
             <td>${buy.buyId}</td>
-            <td>${buy.Item.itemName}</td>
-            <td>${buy.Item.itemPrice}</td>
+            <td>${buy.item.itemName}</td>
+            <td>${buy.item.itemPrice}</td>
             <td>${buy.buyCount}</td>
-            <td>${buy.buyCount * buy.Item.itemPrice}</td>
-            <td>${buy.deliveryStatus}</td>
+            <td>${buy.buyCount * buy.item.itemPrice}</td>
+            <td>${buy.deliveryStatus.getDisplayName()}</td>
         </tr>
         </c:forEach>
     </table>

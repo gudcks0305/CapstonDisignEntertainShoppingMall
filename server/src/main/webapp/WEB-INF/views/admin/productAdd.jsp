@@ -15,7 +15,7 @@
     table.table2 tr {
         width: 100px;
         padding: 10px;
-        
+
     }
     table.table2 td {
         width: 500px;
@@ -42,7 +42,17 @@
                         </select>
                     </td>
                 </tr>
+                <tr>
+                    <td>아티스트</td>
+                    <td>
 
+                        <select id = "itemArtist" name="itemArtist">
+                            <c:forEach var="artist" items="${artistList}">
+                                <option value="${artist.artistId}">${artist.entertainment.name}  ${artist.artistName}</option>
+                            </c:forEach>
+                        </select>
+                    </td>
+                </tr>
                 <tr>
                     <td>카테고리</td>
                     <td>

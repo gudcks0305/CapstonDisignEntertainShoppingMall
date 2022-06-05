@@ -1,4 +1,8 @@
 package com.example.server.repository.Artist;
 
-public interface ArtistRepository {
+import com.example.server.entity.Artist;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ArtistRepository extends JpaRepository<Artist, Long> {
+
 }

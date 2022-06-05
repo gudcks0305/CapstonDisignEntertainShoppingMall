@@ -15,6 +15,7 @@ let item = {
     save:function (){
         let data = {
             itemOwner : $("#itemOwner").val(),
+            itemArtist : $("#itemArtist").val(),
             itemCategory : $("#category").val(),
             itemTitle : $("#itemTitle").val(),
             itemName : $("#itemName").val(),

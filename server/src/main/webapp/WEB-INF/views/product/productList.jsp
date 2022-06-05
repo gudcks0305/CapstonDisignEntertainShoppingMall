@@ -68,8 +68,20 @@
     <body>
 
 
+
+
+
+
+
+
     <section class = "product-list">
+
         <div class = "container w3-container">
+            <div class="w3-row slide" style="text-align: center;background: linear-gradient(90deg, #FFC0CB, skyblue );" >
+                <c:forEach var="item" items="${items.content}" >
+                    <img class="goods-slide w3-circle w3-opacity" src="${item.itemImageUrl}" width="400px" height="300px" style="display: block;margin: 10px auto;">
+                </c:forEach>
+            </div>
             <div class = "title ">
                 <h1>PRODUCT LIST</h1>
                 <ul>
@@ -89,8 +101,8 @@
                     </div>
                     <div class = "text w3-container">
                         <p style="float: right">${item.itemCategory.categoryName}</p>
-                        <h2> ${item.itemTitle} </h2>
-                        <p>${item.itemName}</p>
+                        <h2 style="font-size: 12px"> ${item.itemTitle} </h2>
+                        <p style="font-size: 10px;">${item.itemName}</p>
                         <a href="/item/${item.itemId}"><button><i class = "fas fa-check"></i>상세보기</button>
                         </a>
                     </div>
@@ -100,4 +112,7 @@
         </div>
     </section>
     </body>
+<script>
+    myshow = w3.slideshow(".goods-slide");
+</script>
 <%@ include file="../Layout/footer.jsp"%>

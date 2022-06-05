@@ -39,6 +39,13 @@ public class ItemController {
         model.addAttribute("item", itemService.findById(id));
         return "product/productDetail";
     }
+    @GetMapping("/item/artist/{artistId}")
+    public String artistItemList(@PathVariable Long artistId, Model model
+    ,  @PageableDefault(size = 10,sort = "itemId",direction = Sort.Direction.DESC) Pageable pageable) {
+        model.addAttribute("category", categoryService.findAll());
+        model.addAttribute("items", itemService.findAllByArtistId(artistId , pageable));
+        return "product/productList";
+    }
     //삭제 예정
     @GetMapping("/item/detail")
     public String itemInfo1() {
