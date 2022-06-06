@@ -20,4 +20,8 @@ public class BuyController {
         model.addAttribute("buyList", buyService.getBuyList(principalDetail.getUsername()));
         return "buy/myBuyList";
     }
+    @GetMapping("/buy/pay")
+    public String pay() {
+        return "pay/pay";
+    }
 }
