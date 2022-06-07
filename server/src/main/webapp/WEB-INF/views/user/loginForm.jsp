@@ -73,6 +73,7 @@
     font-size: 15px; color: #999;
     text-decoration: none;
   }
+
 </style>
 
 <body>
@@ -81,12 +82,12 @@
   <form  action="/auth/loginProc" method="POST" class="was-validated">
     <div class="int-area">
       <input style="color: black" type="text"  id="username"  name="username"
-             autocomplete="off" required>
+             autocomplete="off" placeholder="USER NAME" required>
       <Label for="username">USER NAME</Label>
     </div>
     <div class="int-area">
       <input style="color: black" type="password" id="password"  name="password"
-             autocomplete="off" required>
+             autocomplete="off" placeholder="PASSWORD" required>
       <Label for="password">PASSWORD</Label>
     </div>
     <div class="btn-area">

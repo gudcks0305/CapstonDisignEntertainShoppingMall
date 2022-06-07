@@ -1,7 +1,7 @@
 <%@ include file="../Layout/header.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <style>
-        .product-list {
+       .product-list {
             padding-top: 70px;
             padding-bottom: 70px;
         }
@@ -25,20 +25,22 @@
             display : flex;
             flex-wrap : wrap;
             justify-content: space-between;
+
+
         }
 
         .product-list .container .item-list .card {
-            border : 1px solid #eee;
+            border: 2px solid black;
             border-radius: 5px;
-            height : 350px;
-            width: 250px;
-            padding: 5px;
+            width: 240px;
+
             margin-bottom: 10px;
         }
 
         .product-list .container .item-list .card img {
-            height: 200px;
-            width: 250px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
         }
 
         .product-list .container .item-list .card .text p {
@@ -64,80 +66,63 @@
         }
     </style>
     <body>
-    <div class = "nav" >
 
-    </div>
 
-    <section class = "product-list">
-        <div class = "container">
-            <div class = "title">
 
-            </div>
-            <div class = "item-list">
 
-            </div>
-        </div>
-    </section>
+
+
+
 
     <section class = "product-list">
-        <div class = "container">
-            <div class = "title">
+
+        <div class = "container w3-container">
+            <div class="w3-row slide" style="text-align: center;background: linear-gradient(90deg, #FFC0CB, skyblue );" >
+
+                <c:forEach var="item" items="${items.content}" >
+                    <img class="goods-slide w3-circle w3-opacity" src="${item.itemImageUrl}" width="400px" height="300px" style="display: block;margin: 10px auto;">
+
+                </c:forEach>
+            </div>
+            <div class = "title ">
                 <h1>PRODUCT LIST</h1>
                 <ul>
-                    <li><a href = "">앨범</a></li>
-                    <li><a href = "">굿즈</a></li>
-                    <li><a href = "">콘서트</a></li>
-                    <li><a href = "">팬클럽</a></li>
+                    <c:if test="${arts == null}">
+                        <c:forEach var="category" items="${category}">
+                            <li ><a class="category" href=/item/category/${category.categoryId}>${category.categoryName}</a></li>
+                        </c:forEach>
+                    </c:if>
+                    <c:if test="${arts != null}">
+                        <c:forEach var="category" items="${category}">
+                            <li ><a class="category" href=/item/artist/${arts}/${category.categoryId}>${category.categoryName}</a></li>
+                        </c:forEach>
+                    </c:if>
+
+
+
                 </ul>
             </div>
 
-            <div class = "item-list">
-                <div class = "card">
+            <div class = "item-list w3-container">
+                <c:forEach var="item" items="${items.content}">
+                <div  class="card w3-card-4" style="width:25%">
                     <div class = "img">
-                        <img src = "" alt = "">
+                        <img src = "${item.itemImageUrl}" style="height: 300px" alt = "">
                     </div>
-                    <div class = "text">
-                        <h2> 상품명1 </h2>
-                        <p> 상품1 짧은 설명 </p>
-                        <button><i class = "fas fa-check"></i>상세보기</button>
+                    <div class = "text w3-container">
+                        <p style="float: right">${item.itemCategory.categoryName}</p>
+                        <h2 style="font-size: 12px"> ${item.itemTitle} </h2>
+                        <p style="font-size: 10px;">${item.itemName}</p>
+                        <a href="/item/${item.itemId}"><button><i class = "fas fa-check"></i>상세보기</button>
+                        </a>
                     </div>
                 </div>
-
-                <div class = "card">
-                    <div class = "img">
-                        <img src = "" alt = "">
-                    </div>
-                    <div class = "text">
-                        <h2> 상품명2 </h2>
-                        <p> 상품2 짧은 설명 </p>
-                        <button><i class = "fas fa-check"></i>상세보기</button>
-                    </div>
-                </div>
-
-                <div class = "card">
-                    <div class = "img">
-                        <img src = "" alt = "">
-                    </div>
-                    <div class = "text">
-                        <h2> 상품명3 </h2>
-                        <p> 상품3 짧은 설명 </p>
-                        <button><i class = "fas fa-check"></i>상세보기</button>
-                    </div>
-                </div>
-
-                <div class = "card">
-                    <div class = "img">
-                        <img src = "" alt = "">
-                    </div>
-                    <div class = "text">
-                        <h2> 상품명4 </h2>
-                        <p> 상품4 짧은 설명 </p>
-                        <button><i class = "fas fa-check"></i>상세보기</button>
-                    </div>
-                </div>
-
+                </c:forEach>
             </div>
         </div>
     </section>
     </body>
+<script>
+    myshow = w3.slideshow(".goods-slide");
+</script>
 <%@ include file="../Layout/footer.jsp"%>

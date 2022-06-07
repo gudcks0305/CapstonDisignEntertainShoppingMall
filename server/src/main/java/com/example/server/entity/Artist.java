@@ -37,5 +37,15 @@ public class Artist {
     private Entertainment entertainment;
 
 
+    public void update(String artistName, String artistDescription, String artistImageUrl, String artistCountry, String artistWebsite, String artistFacebook, String artistTwitter, String artistInstagram) {
+        this.artistName = artistName;
+        this.artistDescription = artistDescription;
+        this.artistImageUrl = artistImageUrl;
+        this.artistCountry = artistCountry;
+        this.artistWebsite = artistWebsite;
+        this.artistFacebook = artistFacebook;
+        this.artistTwitter = artistTwitter;
+        this.artistInstagram = artistInstagram;
 
+    }
 }

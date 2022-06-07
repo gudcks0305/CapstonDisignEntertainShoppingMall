@@ -25,4 +25,9 @@ public class UserController {
 
         return "user/updateForm";
     }
+    @GetMapping("/user/chargeForm")
+    public String chargeForm(Model model , @AuthenticationPrincipal PrincipalDetail principalDetail){
+        model.addAttribute("user",userService.회원정보(principalDetail.getUser()));
+        return "user/charge";
+    }
 }
